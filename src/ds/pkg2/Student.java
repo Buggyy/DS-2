@@ -5,6 +5,7 @@
  */
 package ds.pkg2;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
@@ -24,14 +25,20 @@ public class Student {
         this.cijfer = cijfer;
     }
 
-    public double generateCijfer() {
+    public Student() {
+    }
+
+    public static double generateCijfer() {
+        DecimalFormat df = new DecimalFormat("#.#");
+
         double rangeMin = 1.0;
         double rangeMax = 10.0;
         
         Random r = new Random();
         double randomValue = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
 
-        return randomValue;
+        return randomValue = Double.valueOf(df.format(randomValue));
+        
     }
 
     public int getStudentNummer() {
