@@ -11,4 +11,11 @@ package ds.pkg2;
  */
 public class Student {
     
+    // Attributes
+    private int studentnummer;
+    private String klas;
+    private double cijfer;
+    
+    
+    
 }
