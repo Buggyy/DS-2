@@ -5,13 +5,23 @@
  */
 package ds.pkg2;
 
+import java.util.ArrayList;
+
 
 /**
  *
  * @author Stefan Lobato [IS204] 500707274
  */
 public class Handler {
+    
+    private ArrayList<Student> allStudents = new ArrayList<>();
 
+    public void createStudents(int amount){
+        for(int i = 0; i < amount; i++){
+            allStudents.add();
+        }
+    }
+    
     public void generateClass() {
         // Generate class from regexr.
         
@@ -44,4 +54,10 @@ public class Handler {
        * 
        */
 
+      // Generates a studentnumber for the given index
+      public int generateStudentNumber(int number){
+          final int BASE_NUMBER = 50060000;
+          
+          return BASE_NUMBER + number;
+      }
 }
