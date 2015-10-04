@@ -17,15 +17,9 @@ public class Klas {
     private ArrayList<Student> list = new ArrayList<>();
     private String naam;
 
-    private final int MAX_STUDENTS = 32;
-
     // Constructor
     public Klas() {
 
-    }
-
-    public enum course {
-        B, G, N, S, T
     }
 
     public ArrayList getList() {

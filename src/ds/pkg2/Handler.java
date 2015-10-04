@@ -5,9 +5,7 @@
  */
 package ds.pkg2;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  *
@@ -16,38 +14,65 @@ import java.util.Random;
 public class Handler {
 
     private ArrayList<Student> allStudents = new ArrayList<>();
+    private final int MAX_STUDENTS = 32;
 
-    
-    // input amount of students
-    // Create student (constructor)
-        // Create studentnumber (method)
-            // forloop x amount of students
-            // 50060001 + i = studentnumber
-    
-        // Create grade (method)
-            // Generated.
-    
-        //  Create course
-            //  amount of students / courses = amount of students per course
-            //  amount of students per course / 32 = round()
-    
-   
+    public enum course {
 
-    public void createStudents(int amount){
-        for(int i = 0; i < amount; i++){
+        B, G, N, S, T
+    }
+
+    public void createStudents(int amount) {
+        for (int i = 0; i < amount; i++) {
             Student student = new Student(generateStudentNumber(i + 1));
             allStudents.add(student);
         }
     }
-    
-    public ArrayList getStudents(){
+
+    public ArrayList getStudents() {
         return allStudents;
     }
-    
-    public void generateClass() {
-        // Generate class from regexr.
 
-        //  
+    public ArrayList calculateClass(ArrayList<Student> arr) {
+        //  Comments @attributes in this method are examples
+        //  10.000
+        int amountOfStudents = arr.size();
+        //  5
+        int amountOfCourses = course.values().length;
+        //  2000
+        int studentsPerCourse = amountOfStudents / amountOfCourses;
+
+        //  62.5
+        double amountOfClasses = studentsPerCourse / MAX_STUDENTS;
+
+        //  63
+        int amountOfClassesInt = (int) Math.round(amountOfClasses);
+
+        for (int i = 0; i < amountOfCourses; i++) {
+            for (int j = 0; j < amountOfClassesInt; j++) {
+
+                //   Create ArrayList with output of generate class
+            }
+
+        }
+
+        return null;
+
+    }
+
+    public ArrayList generateClass() {
+        //   Regular expression
+        //   I[B, G, N, S or T]2[0-9]{4}
+
+        //  return arraylist of all classes like:
+        //  [0] IS20001
+        //  [1] IS20002
+        //  [2] IS20003
+        //  [4] IS20004
+        //  ..
+        //  [42] IB20028
+        //  [43] IB20029
+        //  etc.
+        return null;
     }
 
     public void addStudent(Student student) {
@@ -62,27 +87,10 @@ public class Handler {
 
     }
 
-    public void updateClass() {
-        // 
-    }
-
     // Generates a studentnumber for the given index
     public int generateStudentNumber(int number) {
         final int BASE_NUMBER = 50060000;
 
         return BASE_NUMBER + number;
-    }
-
-    public static double generateCijfer() {
-        DecimalFormat df = new DecimalFormat("#.#");
-
-        double rangeMin = 1.0;
-        double rangeMax = 10.0;
-
-        Random r = new Random();
-        double randomValue = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
-
-        return randomValue = Double.valueOf(df.format(randomValue));
-
     }
 }
