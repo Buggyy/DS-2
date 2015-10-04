@@ -12,32 +12,28 @@ import java.util.ArrayList;
  * @author Omer
  */
 public class Klas {
-    
+
     // Attributes
     private ArrayList<Student> list = new ArrayList<>();
     private String naam;
-    
+
     private final int MAX_STUDENTS = 32;
-    
+
     // Constructor
-    public Klas(){
-        
+    public Klas() {
+
     }
-    
-    public void addStudent(Student student){
-        if(list.size() >= MAX_STUDENTS){   // Throw exception if Klas already has 32 students
-            throw new IndexOutOfBoundsException();
-        }
-        if(list.size() < MAX_STUDENTS)
-        list.add(student);
+
+    public enum course {
+        B, G, N, S, T
     }
-    
-    public ArrayList getList(){
+
+    public ArrayList getList() {
         return this.list;
     }
-    
-    public String getNaam(){
+
+    public String getNaam() {
         return this.naam;
     }
-    
+
 }
