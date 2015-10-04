@@ -32,13 +32,18 @@ public class Handler {
             //  amount of students per course / 32 = round()
     
    
-    
-    public void createStudents(int amount) {
-        for (int i = 0; i < amount; i++) {
-            allStudents.add();
+
+    public void createStudents(int amount){
+        for(int i = 0; i < amount; i++){
+            Student student = new Student(generateStudentNumber(i + 1));
+            allStudents.add(student);
         }
     }
-
+    
+    public ArrayList getStudents(){
+        return allStudents;
+    }
+    
     public void generateClass() {
         // Generate class from regexr.
 
