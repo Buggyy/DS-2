@@ -18,8 +18,13 @@ public class Handler {
 
     public void createStudents(int amount){
         for(int i = 0; i < amount; i++){
-            allStudents.add();
+            Student student = new Student(generateStudentNumber(i + 1));
+            allStudents.add(student);
         }
+    }
+    
+    public ArrayList getStudents(){
+        return allStudents;
     }
     
     public void generateClass() {

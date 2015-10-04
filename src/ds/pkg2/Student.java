@@ -19,13 +19,15 @@ public class Student {
     private Klas klas;
     private double cijfer;
 
-    public Student(int studentNummer, Klas klas, double cijfer) {
+    public Student(int studentNummer, Klas klas) {
         this.studentNummer = studentNummer;
         this.klas = klas;
-        this.cijfer = cijfer;
+        this.cijfer = generateCijfer();
     }
 
-    public Student() {
+    public Student(int studentNummer) {
+        this.studentNummer = studentNummer;
+        this.cijfer = generateCijfer();
     }
 
     public static double generateCijfer() {
@@ -63,6 +65,17 @@ public class Student {
 
     public void setCijfer(double cijfer) {
         this.cijfer = cijfer;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Studentnummer: " + this.studentNummer + "\n");
+        sb.append("Klas: " + this.klas + "\n");
+        sb.append("Cijfer: " + this.cijfer + "\n\n");
+        
+        return sb.toString();
     }
 
 }
