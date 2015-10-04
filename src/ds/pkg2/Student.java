@@ -5,9 +5,11 @@
  */
 package ds.pkg2;
 
+import java.util.Random;
+
 /**
  *
- * @author Omer
+ * @author Omer Z 500.. & Stefan Lobato [IS204] 500707274
  */
 public class Student {
 
@@ -20,6 +22,16 @@ public class Student {
         this.studentNummer = studentNummer;
         this.klas = klas;
         this.cijfer = cijfer;
+    }
+
+    public double generateCijfer() {
+        double rangeMin = 1.0;
+        double rangeMax = 10.0;
+        
+        Random r = new Random();
+        double randomValue = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
+
+        return randomValue;
     }
 
     public int getStudentNummer() {
