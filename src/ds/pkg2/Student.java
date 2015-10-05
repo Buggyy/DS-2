@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author Omer Z 500.. & Stefan Lobato [IS204] 500707274
  */
-public class Student {
+public class Student{
 
     // Attributes
     private int studentNummer;

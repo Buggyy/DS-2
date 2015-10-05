@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Stefan Lobato [IS204] 500707274
  */
-public class Handler {
+public class KlasHandler {
 
     private ArrayList<Student> allStudents = new ArrayList<>();
     private final int MAX_STUDENTS = 32;
@@ -48,18 +48,14 @@ public class Handler {
         int amountOfClassesInt = (int) Math.round(amountOfClasses);
 
         for (int i = 0; i < amountOfCourses; i++) {
-            for (int j = 0; j < amountOfClassesInt; j++) {
-
-                //   Create ArrayList with output of generate class
-            }
-
+            generateClass(amountOfClassesInt);
         }
 
         return null;
 
     }
 
-    public ArrayList generateClass() {
+    public ArrayList generateClass(int classes) {
         //   Regular expression
         //   I[B, G, N, S or T]2[0-9]{4}
 

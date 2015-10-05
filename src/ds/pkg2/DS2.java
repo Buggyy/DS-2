@@ -22,14 +22,20 @@ public class DS2 {
 //            System.out.println(n.generateCijfer());
 //        }
 
-        Handler handler = new Handler();
+        KlasHandler khandler = new KlasHandler();
+        StudentHandler shandler = new StudentHandler();
 
-        handler.createStudents(10);
+        khandler.createStudents(10);
 
-        ArrayList allStudents = handler.getStudents();
+        ArrayList allStudents = khandler.getStudents();
 
-        for (int i = 0; i < allStudents.size(); i++) {
-            System.out.println(allStudents.get(i).toString());
+//        for (int i = 0; i < allStudents.size(); i++) {
+//            System.out.println(allStudents.get(i).toString());
+//        }
+        
+        for (int i = 0; i < 20; i++) {
+            Klas k = new Klas("T", i);
+            System.out.println(k.toString());
         }
 
     }
