@@ -20,20 +20,42 @@ public class DS2 {
 
         //  Create new KlasHandler & StudentHandler
         KlasHandler klasHandler = new KlasHandler();
-        StudentHandler studendHandler = new StudentHandler();
+        StudentHandler studentHandler = new StudentHandler();
+
 
         //  Create students
-        studendHandler.createStudents(10);
+        studentHandler.createStudents(10);
         //  Retrieve array with students
         //  At this point we only got an array with studentnumbers
-        ArrayList allStudents = studendHandler.getStudents();
+        ArrayList<Student> allStudents = studentHandler.getStudents();
 
-        //  
+
+        // 
         klasHandler.calculateClass(allStudents);
 
-        klasHandler.getAllClasses();
-        studendHandler.getAllStudents();
 
+        klasHandler.getAllClassesString();
+        studentHandler.getAllStudents();
+
+
+
+        System.out.println(klasHandler.getAllClassesString());
+        
+        // allStudents ArrayList omzetten naar array
+        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
+        
+        Selection.sort(allStudentsArray);
+        
+        for( int i = 0; i < allStudentsArray.length; i++){
+            System.out.println( allStudentsArray[i].toString() );
+        }
+        
+        // shuffle students array
+        StdRandom.shuffle(allStudentsArray);
+        System.out.println("Geshuffled vanaf hier");
+        for( int i = 0; i < allStudentsArray.length; i++){
+            System.out.println( allStudentsArray[i].toString() );
+        }
+        
     }
-
 }
