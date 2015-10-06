@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Omer
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
 public class Klas {
 
@@ -20,13 +20,6 @@ public class Klas {
     private String naam;
     private String richting;
     private int nummer;
-
-    // Constructor
-
-    /**
-     *
-     */
-        public Klas() { }
 
     /**
      *

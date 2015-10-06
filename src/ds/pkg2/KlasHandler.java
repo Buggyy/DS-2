@@ -5,115 +5,76 @@
  */
 package ds.pkg2;
 
-import static ds.pkg2.KlasHandler.course.values;
 import static java.lang.Math.round;
-import static java.lang.System.out;
 import java.util.ArrayList;
 
-
+/**
+ *
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
+ *
+ */
 public class KlasHandler {
 
     private final int MAX_STUDENTS = 32;
 
     private int amountOfClassesInt;
-    
-    private final ArrayList<Klas> allClasses = new ArrayList<>();
-  
 
-   
+    private ArrayList<Klas> allClasses = new ArrayList<>();
+
+    public int getAllClasses() {
+        return allClasses.size();
+    }
+
     /**
-     * 
-     * @param arr 
+     * Calculating the amount of classrooms to be created.
+     *
+     * @param arr ArrayList of students
      */
     public void calculateClass(ArrayList<Student> arr) {
         //  Comments @attributes in this method are examples
         //  10.000
         int amountOfStudents = arr.size();
         //  5
-        int amountOfCourses = values().length;
+        int amountOfCourses = course.values().length;
         //  2000
         int studentsPerCourse = amountOfStudents / amountOfCourses;
-
         //  62.5
         double amountOfClasses = studentsPerCourse / MAX_STUDENTS;
-
         //  63
-        amountOfClassesInt = (int) round(amountOfClasses);
+        int amountOfClassesInt = (int) round(amountOfClasses) + 1;
 
-        for (int i = 0; i < amountOfCourses; i++) {
-            generateClass(amountOfClassesInt);
-        }
-
+        //  Generate the amount of classes
+        generateClass(amountOfClassesInt);
+        
     }
 
-    public ArrayList generateClass(int classes) {
+    public void generateClass(int classes) {
         
-        course[] allCourses = values();    // Create list for all courses
-
-        // allClasses = new ArrayList();   // Create list for all classes
-        
-        // Loops through all courses
-        for(course c : values()){ 
-            
-            // Loop untill the right amount of classes had been made for each course
-            for(int i = 0; i < classes; i++){   
-                allClasses.add( new Klas("B", i + 1) );   // TO DO: Richting met enum aangeven
-                allClasses.add( new Klas("G", i + 1) );   // Proberen te loopen door alle richtingen in plaats van zelf in te voeren
-                allClasses.add( new Klas("N", i + 1) );
-                allClasses.add( new Klas("S", i + 1) );
-                allClasses.add( new Klas("T", i + 1) );
+        for (int i = 1; i < classes; i++) {
+            for (course value : course.values()) {
+                allClasses.add(new Klas(value.toString(), i));
             }
-            
         }
-
-        //   Regular expression
-        //   I[BGNST]2[0-9]{4}
-
-        //  return arraylist of all classes like:
-        //  [0] IS20001
-        //  [1] IS20002
-        //  [2] IS20003
-        //  [4] IS20004
-        //  ..
-        //  [42] IB20028
-        //  [43] IB20029
-        //  etc.
-        
-        return null;
     }
-    
-    public void printAllClasses(){
-        allClasses.stream().forEach((k) -> {
-            out.println(k.toString());
-        });
-    }
-
-
-
- 
 
     public enum course {
 
         /**
          *
          */
-        B, 
-
+        B,
         /**
          *
          */
-        G, 
-
+        G,
         /**
          *
          */
-        N, 
-
+        N,
         /**
          *
          */
-        S, 
-
+        S,
         /**
          *
          */

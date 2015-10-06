@@ -22,21 +22,17 @@ public class DS2 {
         KlasHandler klasHandler = new KlasHandler();
         StudentHandler studendHandler = new StudentHandler();
 
-        //  Create students with an amount
+        //  Create students
         studendHandler.createStudents(10);
-
+        //  Retrieve array with students
+        //  At this point we only got an array with studentnumbers
         ArrayList allStudents = studendHandler.getStudents();
 
-        
-        for (int i = 0; i < 20; i++) {
-            Klas k = new Klas("T", i);
-            System.out.println(k.toString());
-        }
-        
+        //  
         klasHandler.calculateClass(allStudents);
         
-        klasHandler.printAllClasses();
-        
+        System.out.println(klasHandler.getAllClasses());
+
     }
 
 }

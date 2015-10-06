@@ -9,13 +9,14 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Stefan Lobato [IS204] 500707274
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
 public class StudentHandler {
 
     private ArrayList<Student> allStudents = new ArrayList<>();
-    
-    private final int BASE_NUMBER = 50_060_000;
+
+    private final int BASE_NUMBER = 0x2fbdae0;
+
     /**
      *
      * @return
@@ -25,13 +26,12 @@ public class StudentHandler {
     }
 
     // Generates a studentnumber for the given index
-
     /**
      *
      * @param number
      * @return
      */
-        public int generateStudentNumber(int number) {
+    public int generateStudentNumber(int number) {
         return BASE_NUMBER + number;
     }
 
@@ -44,22 +44,6 @@ public class StudentHandler {
             Student student = new Student(generateStudentNumber(i + 1));
             allStudents.add(student);
         }
-    }
-    
-    /**
-     *
-     * @param student
-     */
-    public void addStudent(Student student) {
-//        if (list.size() < MAX_STUDENTS) {
-//            list.add(student);
-//
-//        } else {
-//            //  generate new klas (use generate class method)
-//
-//            throw new IndexOutOfBoundsException();
-//        }
-
     }
 
 }
