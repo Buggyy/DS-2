@@ -16,6 +16,10 @@ public class KlasHandler {
     private ArrayList<Student> allStudents = new ArrayList<>();
     private final int MAX_STUDENTS = 32;
 
+    private int amountOfClassesInt;
+    
+    private ArrayList<Klas> allClasses = new ArrayList<>();
+    
     public enum course {
 
         B, G, N, S, T
@@ -45,7 +49,7 @@ public class KlasHandler {
         double amountOfClasses = studentsPerCourse / MAX_STUDENTS;
 
         //  63
-        int amountOfClassesInt = (int) Math.round(amountOfClasses);
+        amountOfClassesInt = (int) Math.round(amountOfClasses);
 
         for (int i = 0; i < amountOfCourses; i++) {
             generateClass(amountOfClassesInt);
@@ -56,6 +60,25 @@ public class KlasHandler {
     }
 
     public ArrayList generateClass(int classes) {
+        
+        course[] allCourses = course.values();    // Create list for all courses
+
+        // allClasses = new ArrayList();   // Create list for all classes
+        
+        // Loops through all courses
+        for(course c : course.values()){    // Iterate through courses
+            
+            // Loop untill the right amount of classes had been made for each course
+            for(int i = 0; i < classes; i++){   
+                allClasses.add( new Klas("B", i + 1) );   // TO DO: Richting met enum aangeven
+                allClasses.add( new Klas("G", i + 1) );   // Proberen te loopen door alle richtingen in plaats van zelf in te voeren
+                allClasses.add( new Klas("N", i + 1) );
+                allClasses.add( new Klas("S", i + 1) );
+                allClasses.add( new Klas("T", i + 1) );
+            }
+            
+        }
+
         //   Regular expression
         //   I[B, G, N, S or T]2[0-9]{4}
 
@@ -69,6 +92,12 @@ public class KlasHandler {
         //  [43] IB20029
         //  etc.
         return null;
+    }
+    
+    public void printAllClasses(){
+        for(Klas k : allClasses){
+            System.out.println( k.toString() );
+        }
     }
 
     public void addStudent(Student student) {

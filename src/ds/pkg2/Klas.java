@@ -21,7 +21,13 @@ public class Klas {
 
     @Override
     public String toString() {
-        return naam;
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Naam: " + this.naam + "\n");
+        sb.append("Richting: " + this.richting + "\n");
+        sb.append("Nummer: " + this.nummer + "\n\n");
+        
+        return sb.toString();
     }
 
     // Constructor
@@ -31,6 +37,10 @@ public class Klas {
 
     public Klas(String richting, int nummer) {
         this.naam = "I" + richting + "2" + String.format("%04d", nummer);
+    }
+    
+    public void addStudent(Student student){
+        this.list.add( student );
     }
 
     public String getRichting() {

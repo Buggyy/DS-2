@@ -37,7 +37,11 @@ public class DS2 {
             Klas k = new Klas("T", i);
             System.out.println(k.toString());
         }
-
+        
+        khandler.calculateClass(allStudents);
+        
+        khandler.printAllClasses();
+        
     }
 
 }
