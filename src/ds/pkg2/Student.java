@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
-public class Student{
+public class Student implements Comparable {
 
     // Attributes
     private int studentNummer;
@@ -35,12 +35,12 @@ public class Student{
 
         double rangeMin = 1.0;
         double rangeMax = 10.0;
-        
+
         Random r = new Random();
         double randomValue = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
 
         return randomValue = Double.valueOf(df.format(randomValue));
-        
+
     }
 
     public int getStudentNummer() {
@@ -66,16 +66,32 @@ public class Student{
     public void setCijfer(double cijfer) {
         this.cijfer = cijfer;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder();
-        
+
         sb.append("Studentnummer: " + this.studentNummer + "\n");
         sb.append("Klas: " + this.klas + "\n");
         sb.append("Cijfer: " + this.cijfer + "\n\n");
-        
+
         return sb.toString();
+    }
+
+    public int compareTo(Student that) {
+        if(this.cijfer > that.cijfer)
+            return +1;
+        if(this.cijfer < that.cijfer){
+            return -1;
+        }
+        else return 0;
+    }
+    
+    
+
+    @Override
+    public int compareTo(Object o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
