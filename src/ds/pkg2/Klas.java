@@ -16,8 +16,9 @@ import java.util.logging.Logger;
 public class Klas {
 
     // Attributes
-    private ArrayList<Student> list = new ArrayList<>();
+    private ArrayList<Student> klas = new ArrayList<>();
     private String naam;
+
     private String richting;
     private int nummer;
 
@@ -35,7 +36,7 @@ public class Klas {
      * @param student
      */
     public void addStudent(Student student) {
-        this.list.add(student);
+        this.klas.add(student);
     }
 
     /**
@@ -70,12 +71,8 @@ public class Klas {
         this.nummer = nummer;
     }
 
-    /**
-     *
-     * @return
-     */
-    public ArrayList getList() {
-        return this.list;
+    public ArrayList<Student> getKlas() {
+        return this.klas;
     }
 
     /**
@@ -90,13 +87,10 @@ public class Klas {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Naam: ").append(this.naam).append("\n");
-        sb.append("Richting: ").append(this.richting).append("\n");
-        sb.append("Nummer: ").append(this.nummer).append("\n\n");
+        return sb.append(this.naam).append("\n").toString();
 
-        return sb.toString();
     }
-    
+
     private static final Logger LOG = Logger.getLogger(Klas.class.getName());
 
 }

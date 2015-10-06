@@ -30,8 +30,9 @@ public class DS2 {
 
         //  
         klasHandler.calculateClass(allStudents);
-        
-        System.out.println(klasHandler.getAllClasses());
+
+        klasHandler.getAllClasses();
+        studendHandler.getAllStudents();
 
     }
 

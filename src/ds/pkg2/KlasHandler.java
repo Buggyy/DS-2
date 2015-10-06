@@ -21,9 +21,17 @@ public class KlasHandler {
 
     private ArrayList<Klas> allClasses = new ArrayList<>();
 
-    public int getAllClasses() {
-        return allClasses.size();
+    @Override
+    public String toString() {
+        return allClasses + " ";
     }
+
+    public void getAllClasses() {
+ 
+           System.out.println(allClasses.toString());
+
+    }
+
 
     /**
      * Calculating the amount of classrooms to be created.
@@ -45,18 +53,41 @@ public class KlasHandler {
 
         //  Generate the amount of classes
         generateClass(amountOfClassesInt);
-        
-    }
 
+    }
+    
+ 
+    /**
+     * 
+     * @param classes 
+     */
     public void generateClass(int classes) {
-        
-        for (int i = 1; i < classes; i++) {
+
+        for (int i = 1; i <= classes; i++) {
             for (course value : course.values()) {
                 allClasses.add(new Klas(value.toString(), i));
             }
         }
     }
-
+    
+    /**
+     * -------------------------------------------------------------------------------
+     * Give student a class
+     * @param studArr
+     * @param klasArr 
+     */
+    public void studentInKlas(ArrayList<Student> studArr, 
+            ArrayList<Klas> klasArr) {
+        for (int i = 0; i < klasArr.size(); i++) {
+            studArr.get(i).setKlas(klasArr.get(i));
+            
+        }
+        
+    }
+// -----------------------------------------------------------------------------------
+    /**
+     * 
+     */
     public enum course {
 
         /**

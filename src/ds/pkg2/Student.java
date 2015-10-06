@@ -79,15 +79,15 @@ public class Student implements Comparable {
     }
 
     public int compareTo(Student that) {
-        if(this.cijfer > that.cijfer)
+        if (this.cijfer > that.cijfer) {
             return +1;
-        if(this.cijfer < that.cijfer){
-            return -1;
         }
-        else return 0;
+        if (this.cijfer < that.cijfer) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
-    
-    
 
     @Override
     public int compareTo(Object o) {

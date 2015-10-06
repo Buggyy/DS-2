@@ -15,7 +15,7 @@ public class StudentHandler {
 
     private ArrayList<Student> allStudents = new ArrayList<>();
 
-    private final int BASE_NUMBER = 0x2fbdae0;
+    private final int BASE_NUMBER = 50060001;
 
     /**
      *
@@ -23,6 +23,17 @@ public class StudentHandler {
      */
     public ArrayList getStudents() {
         return allStudents;
+    }
+
+    @Override
+    public String toString() {
+        return allStudents + " ";
+    }
+
+    public void getAllStudents() {
+
+        System.out.println(allStudents.toString());
+
     }
 
     // Generates a studentnumber for the given index
@@ -41,7 +52,7 @@ public class StudentHandler {
      */
     public void createStudents(int amount) {
         for (int i = 0; i < amount; i++) {
-            Student student = new Student(generateStudentNumber(i + 1));
+            Student student = new Student(generateStudentNumber(i));
             allStudents.add(student);
         }
     }
