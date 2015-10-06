@@ -5,10 +5,61 @@
  */
 package ds.pkg2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Stefan Lobato [IS204] 500707274
  */
 public class StudentHandler {
+
+    private ArrayList<Student> allStudents = new ArrayList<>();
     
+    private final int BASE_NUMBER = 50_060_000;
+    /**
+     *
+     * @return
+     */
+    public ArrayList getStudents() {
+        return allStudents;
+    }
+
+    // Generates a studentnumber for the given index
+
+    /**
+     *
+     * @param number
+     * @return
+     */
+        public int generateStudentNumber(int number) {
+        return BASE_NUMBER + number;
+    }
+
+    /**
+     *
+     * @param amount
+     */
+    public void createStudents(int amount) {
+        for (int i = 0; i < amount; i++) {
+            Student student = new Student(generateStudentNumber(i + 1));
+            allStudents.add(student);
+        }
+    }
+    
+    /**
+     *
+     * @param student
+     */
+    public void addStudent(Student student) {
+//        if (list.size() < MAX_STUDENTS) {
+//            list.add(student);
+//
+//        } else {
+//            //  generate new klas (use generate class method)
+//
+//            throw new IndexOutOfBoundsException();
+//        }
+
+    }
+
 }

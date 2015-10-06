@@ -5,43 +5,32 @@
  */
 package ds.pkg2;
 
+import static ds.pkg2.KlasHandler.course.values;
+import static java.lang.Math.round;
+import static java.lang.System.out;
 import java.util.ArrayList;
 
-/**
- *
- * @author Stefan Lobato [IS204] 500707274
- */
+
 public class KlasHandler {
 
-    private ArrayList<Student> allStudents = new ArrayList<>();
     private final int MAX_STUDENTS = 32;
 
     private int amountOfClassesInt;
     
-    private ArrayList<Klas> allClasses = new ArrayList<>();
-    
-    public enum course {
+    private final ArrayList<Klas> allClasses = new ArrayList<>();
+  
 
-        B, G, N, S, T
-    }
-
-    public void createStudents(int amount) {
-        for (int i = 0; i < amount; i++) {
-            Student student = new Student(generateStudentNumber(i + 1));
-            allStudents.add(student);
-        }
-    }
-
-    public ArrayList getStudents() {
-        return allStudents;
-    }
-
-    public ArrayList calculateClass(ArrayList<Student> arr) {
+   
+    /**
+     * 
+     * @param arr 
+     */
+    public void calculateClass(ArrayList<Student> arr) {
         //  Comments @attributes in this method are examples
         //  10.000
         int amountOfStudents = arr.size();
         //  5
-        int amountOfCourses = course.values().length;
+        int amountOfCourses = values().length;
         //  2000
         int studentsPerCourse = amountOfStudents / amountOfCourses;
 
@@ -49,24 +38,22 @@ public class KlasHandler {
         double amountOfClasses = studentsPerCourse / MAX_STUDENTS;
 
         //  63
-        amountOfClassesInt = (int) Math.round(amountOfClasses);
+        amountOfClassesInt = (int) round(amountOfClasses);
 
         for (int i = 0; i < amountOfCourses; i++) {
             generateClass(amountOfClassesInt);
         }
 
-        return null;
-
     }
 
     public ArrayList generateClass(int classes) {
         
-        course[] allCourses = course.values();    // Create list for all courses
+        course[] allCourses = values();    // Create list for all courses
 
         // allClasses = new ArrayList();   // Create list for all classes
         
         // Loops through all courses
-        for(course c : course.values()){    // Iterate through courses
+        for(course c : values()){ 
             
             // Loop untill the right amount of classes had been made for each course
             for(int i = 0; i < classes; i++){   
@@ -80,7 +67,7 @@ public class KlasHandler {
         }
 
         //   Regular expression
-        //   I[B, G, N, S or T]2[0-9]{4}
+        //   I[BGNST]2[0-9]{4}
 
         //  return arraylist of all classes like:
         //  [0] IS20001
@@ -91,31 +78,45 @@ public class KlasHandler {
         //  [42] IB20028
         //  [43] IB20029
         //  etc.
+        
         return null;
     }
     
     public void printAllClasses(){
-        for(Klas k : allClasses){
-            System.out.println( k.toString() );
-        }
+        allClasses.stream().forEach((k) -> {
+            out.println(k.toString());
+        });
     }
 
-    public void addStudent(Student student) {
-//        if (list.size() < MAX_STUDENTS) {
-//            list.add(student);
-//
-//        } else {
-//            //  generate new klas (use generate class method)
-//
-//            throw new IndexOutOfBoundsException();
-//        }
 
-    }
 
-    // Generates a studentnumber for the given index
-    public int generateStudentNumber(int number) {
-        final int BASE_NUMBER = 50060000;
+ 
 
-        return BASE_NUMBER + number;
+    public enum course {
+
+        /**
+         *
+         */
+        B, 
+
+        /**
+         *
+         */
+        G, 
+
+        /**
+         *
+         */
+        N, 
+
+        /**
+         *
+         */
+        S, 
+
+        /**
+         *
+         */
+        T
     }
 }

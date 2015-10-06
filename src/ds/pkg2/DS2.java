@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Omer Z 500.. & Stefan Lobato [IS204] 500707274
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
 public class DS2 {
 
@@ -17,30 +17,25 @@ public class DS2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        for (int i = 0; i < 20; i++) {
-//            Student n = new Student();
-//            System.out.println(n.generateCijfer());
-//        }
 
-        KlasHandler khandler = new KlasHandler();
-        StudentHandler shandler = new StudentHandler();
+        //  Create new KlasHandler & StudentHandler
+        KlasHandler klasHandler = new KlasHandler();
+        StudentHandler studendHandler = new StudentHandler();
 
-        khandler.createStudents(10);
+        //  Create students with an amount
+        studendHandler.createStudents(10);
 
-        ArrayList allStudents = khandler.getStudents();
+        ArrayList allStudents = studendHandler.getStudents();
 
-//        for (int i = 0; i < allStudents.size(); i++) {
-//            System.out.println(allStudents.get(i).toString());
-//        }
         
         for (int i = 0; i < 20; i++) {
             Klas k = new Klas("T", i);
             System.out.println(k.toString());
         }
         
-        khandler.calculateClass(allStudents);
+        klasHandler.calculateClass(allStudents);
         
-        khandler.printAllClasses();
+        klasHandler.printAllClasses();
         
     }
 
