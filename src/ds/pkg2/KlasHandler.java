@@ -26,9 +26,9 @@ public class KlasHandler {
         return allClasses + " ";
     }
 
-    public void getAllClasses() {
+    public String getAllClassesString() {
  
-           System.out.println(allClasses.toString());
+           return allClasses.toString();
 
     }
 
