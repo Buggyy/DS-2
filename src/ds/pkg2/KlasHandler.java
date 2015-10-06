@@ -78,6 +78,7 @@ public class KlasHandler {
      */
     public void studentInKlas(ArrayList<Student> studArr, 
             ArrayList<Klas> klasArr) {
+        
         for (int i = 0; i < klasArr.size(); i++) {
             studArr.get(i).setKlas(klasArr.get(i));
             
