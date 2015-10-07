@@ -7,6 +7,7 @@ package ds.pkg2;
 
 import static java.lang.String.format;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.logging.Logger;
 
 /**
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
 public class Klas {
 
     // Attributes
-    private ArrayList<Student> students = new ArrayList<>();
+    private LinkedList students = new LinkedList();
 
     private String naam;
 
@@ -103,6 +104,18 @@ public class Klas {
 
     }
 
+    public int compareName(Klas that){
+        if (this.getNaam() > that.getNaam() ) {
+            return -1;
+        }
+        if (this.cijfer < that.cijfer) {
+            return +1;
+        } else {
+            return 0;
+        }
+    }
+    
+    public 
 
     private static final Logger LOG = Logger.getLogger(Klas.class.getName());
 
