@@ -9,7 +9,6 @@ import static java.lang.Double.valueOf;
 import java.text.DecimalFormat;
 import java.util.Random;
 
-
 public class Student /*implements Comparator<Student>*/ {
 
     /**
@@ -19,9 +18,12 @@ public class Student /*implements Comparator<Student>*/ {
      */
     public static double generateCijfer() {
         DecimalFormat df = new DecimalFormat("#.#");
+        
         double rangeMin = 1.0;
         double rangeMax = 10.0;
+        
         Random r = new Random();
+        
         double randomValue = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
         return randomValue = valueOf(df.format(randomValue));
     }
@@ -128,6 +130,5 @@ public class Student /*implements Comparator<Student>*/ {
 //
 //        };
 //    }
-    
 
 }

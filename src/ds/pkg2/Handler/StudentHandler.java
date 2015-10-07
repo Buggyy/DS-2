@@ -6,9 +6,7 @@
 package ds.pkg2.Handler;
 
 import ds.pkg2.Student;
-import static java.lang.System.out;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 /**
  *
@@ -27,9 +25,10 @@ public class StudentHandler {
     public ArrayList<Student> getStudents() {
         return allStudents;
     }
-    
+
     /**
      * Generates a student number with the given number
+     *
      * @param number
      * @return
      */
@@ -52,12 +51,4 @@ public class StudentHandler {
     public String toString() {
         return allStudents + " ";
     }
-
-    /**
-     *
-     */
-    public void getAllStudentsString() {
-    }
-    private static final Logger LOG = Logger.getLogger(StudentHandler.class.getName());
-
 }

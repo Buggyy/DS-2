@@ -31,6 +31,7 @@ public class School {
     public void addKlas(Klas klas) {
         this.school.add(klas);
     }
+    
     private static final Logger LOG = Logger.getLogger(School.class.getName());
 
 }

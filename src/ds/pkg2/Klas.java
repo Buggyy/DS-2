@@ -14,8 +14,8 @@ public class Klas /*implements Comparator<Klas> */ {
 
     /**
      *
-     * @param richting
-     * @param nummer
+     * @param richting Course
+     * @param nummer 
      */
     public Klas(String richting, int nummer) {
         this.naam = "I" + richting + "2" + format("%04d", nummer + 1);
@@ -24,8 +24,10 @@ public class Klas /*implements Comparator<Klas> */ {
 
     @Override
     public String toString() {
+        
         StringBuilder sb = new StringBuilder();
         sb.append("Klas: ").append(this.naam).append("\n");
+        
         for (Object student : students) {
             sb.append(student);
         }
