@@ -7,12 +7,26 @@ import java.util.LinkedList;
  *
  * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
-public class Klas implements Comparable<Klas>{
+public class Klas implements Comparable<Klas> {
 
     // Attributes
     private LinkedList students = new LinkedList();
 
     private String naam;
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Klas: " + this.naam + "\n");
+
+        for (int i = 0; i < students.size(); i++) {
+            sb.append(students.get(i));
+
+        }
+
+        return sb.toString();
+    }
 
     /**
      *
@@ -20,7 +34,7 @@ public class Klas implements Comparable<Klas>{
      * @param nummer
      */
     public Klas(String richting, int nummer) {
-        this.naam = "I" + richting + "2" + format("%04d", nummer);
+        this.naam = "I" + richting + "2" + format("%04d", nummer + 1);
         this.students = students;
     }
 
@@ -30,6 +44,7 @@ public class Klas implements Comparable<Klas>{
 
     /**
      * Adds a Student to the Klas
+     *
      * @param student
      */
     public void addStudent(Student student) {
@@ -40,5 +55,5 @@ public class Klas implements Comparable<Klas>{
     public int compareTo(Klas naam) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

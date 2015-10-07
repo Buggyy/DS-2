@@ -7,7 +7,7 @@ package ds.pkg2.Handler;
 
 import ds.pkg2.Klas;
 import ds.pkg2.Student;
-import static java.lang.Math.round;
+import static java.lang.Math.ceil;
 import java.util.ArrayList;
 
 /**
@@ -26,29 +26,30 @@ public class KlasHandler {
     public ArrayList<Klas> getAllClasses() {
         return allClasses;
     }
-    
+
     /**
      * Calculating the amount of classrooms to be created.
      *
      * @param arr ArrayList of students
      */
     public void calculateClass(ArrayList<Student> arr) {
-        //  Comments @attributes in this method are examples
         //  10.000
         int amountOfStudents = arr.size();
         //  5
         int amountOfCourses = course.values().length;
         //  2000
-        int studentsPerCourse = amountOfStudents / amountOfCourses;
+        double studentsPerCourse = amountOfStudents / amountOfCourses;
+
         //  62.5
         double amountOfClasses = studentsPerCourse / MAX_STUDENTS;
         //  63
-        int amountOfClassesInt = (int) round(amountOfClasses) + 1;
+        int amountOfClassesInt = (int) ceil(amountOfClasses);
 
         //  Generate the amount of classes
         generateClass(amountOfClassesInt);
 
     }
+     
 
     /**
      * Generate the amount of classrooms
@@ -57,40 +58,39 @@ public class KlasHandler {
      */
     public void generateClass(int classes) {
 
-        for (int i = 1; i <= classes; i++) {
+        for (int i = 0; i < classes; i++) {
             for (course value : course.values()) {
                 allClasses.add(new Klas(value.toString(), i));
             }
         }
     }
 
-
     /**
-     *  Course
+     * Course
      */
     public enum course {
 
         /**
-         *  Business IT and Management
+         * Business IT and Management
          */
         B,
         /**
-         *  Game Development
+         * Game Development
          */
         G,
         /**
-         *  System and Network Engineering
+         * System and Network Engineering
          */
         N,
         /**
-         *  Software Engineering
+         * Software Engineering
          */
         S,
         /**
          * Technische Informatica
          */
         T
-        
+
         //  To add a course, just add an enum
     }
 
