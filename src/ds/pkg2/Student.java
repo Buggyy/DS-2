@@ -19,14 +19,9 @@ public class Student implements Comparable {
     private Klas klas;
     private double cijfer;
 
-    public Student(int studentNummer, Klas klas) {
-        this.studentNummer = studentNummer;
-        this.klas = klas;
-        this.cijfer = generateCijfer();
-    }
-
     public Student(int studentNummer) {
         this.studentNummer = studentNummer;
+        this.klas = klas;
         this.cijfer = generateCijfer();
     }
 
@@ -73,7 +68,7 @@ public class Student implements Comparable {
 
         sb.append("Studentnummer: " + this.studentNummer + "\n");
         sb.append("Klas: " + this.klas + "\n");
-        sb.append("Cijfer: " + this.cijfer + "\n\n");
+        sb.append("Cijfer: " + this.cijfer + "\n");
 
         return sb.toString();
     }

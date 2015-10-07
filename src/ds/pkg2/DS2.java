@@ -6,7 +6,6 @@
 package ds.pkg2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
@@ -23,22 +22,30 @@ public class DS2 {
         //  Create new KlasHandler & StudentHandler
         KlasHandler klasHandler = new KlasHandler();
         StudentHandler studentHandler = new StudentHandler();
-
+        MainHandler mainHandler = new MainHandler();
 
         //  Create students
-        studentHandler.createStudents(10);
+        studentHandler.createStudents(13);
         //  Retrieve array with students
         //  At this point we only got an array with studentnumbers and grades
         ArrayList<Student> allStudents = studentHandler.getStudents();
+        
+        
 
         // Calculating the amount of classrooms to be created.
         klasHandler.calculateClass(allStudents);
-
-
-        klasHandler.getAllClassesString();
-        studentHandler.getAllStudentsString();
+       
+         
+        //  ArrayList of all classroomss
+        ArrayList<Klas> allClasses = klasHandler.getAllClasses();
+                
+        //  ArrayList of classrooms filled with students
+        ArrayList<Klas> filled = mainHandler.studentInKlas(allStudents, allClasses);
         
-
+        System.out.println(filled.toString());
+        
+//        klasHandler.getAllClassesString();
+//        studentHandler.getAllStudentsString();
         
         // allStudents ArrayList omzetten naar array
         Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
