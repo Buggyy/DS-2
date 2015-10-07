@@ -34,7 +34,7 @@ public class Klas {
     }
 
     /**
-     *
+     * Adds a Student to the Klas
      * @param student
      */
     public void addStudent(Student student) {

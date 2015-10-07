@@ -13,7 +13,12 @@ import java.util.Comparator;
  */
 public class Selection implements Comparator<Student> {
     
-    public static void sort(Student[] a) {  // Sort a[] into increasing order.
+    /**
+     * Sort a[] into increasing order.
+     * 
+     * @param a 
+     */
+    public static void sort(Student[] a) {  
         int N = a.length;               // array length
         for (int i = 0; i < N; i++) {  // Exchange a[i] with smallest entry in a[i+1...N).
             int min = i;                 // index of minimal entr.

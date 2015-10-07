@@ -6,6 +6,7 @@
 package ds.pkg2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
@@ -32,7 +33,7 @@ public class DS2 {
         
         
 
-        // Calculating the amount of classrooms to be created.
+        // Calculating the amount of classrooms to be created per course
         klasHandler.calculateClass(allStudents);
        
          
@@ -46,20 +47,23 @@ public class DS2 {
         
 //        klasHandler.getAllClassesString();
 //        studentHandler.getAllStudentsString();
+
         
-        // allStudents ArrayList omzetten naar array
+        // Convert allStudents ArrayList to an array to enable sorting
         Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
         
+        // Sort all the students based on "cijfer" from low to high
         Selection.sort(allStudentsArray);
         
+        // Print all the contents of the allStudents array
         for (Student allStudentsArray1 : allStudentsArray) {
             System.out.println(allStudentsArray1.toString());
         }
         
-        // shuffle students array
+        // Shuffle students array
         StdRandom.shuffle(allStudentsArray);
 
-        System.out.println("SHUFFLE");
+        System.out.println("**SHUFFLE\n");
         for (Student allStudentsArray1 : allStudentsArray) {
             System.out.println(allStudentsArray1.toString());
 
