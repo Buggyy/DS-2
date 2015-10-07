@@ -15,24 +15,16 @@ import java.util.ArrayList;
  */
 public class KlasHandler {
 
-    private final int MAX_STUDENTS = 32;
+    private static final int MAX_STUDENTS = 32;
 
     private int amountOfClassesInt;
 
     private ArrayList<Klas> allClasses = new ArrayList<>();
 
-    @Override
-    public String toString() {
-        return allClasses + " ";
+    public ArrayList<Klas> getAllClasses() {
+        return allClasses;
     }
-
-    public String getAllClassesString() {
- 
-           return allClasses.toString();
-
-    }
-
-
+    
     /**
      * Calculating the amount of classrooms to be created.
      *
@@ -55,11 +47,11 @@ public class KlasHandler {
         generateClass(amountOfClassesInt);
 
     }
-    
- 
+
     /**
-     * 
-     * @param classes 
+     * Generate the amount of classrooms
+     *
+     * @param classes
      */
     public void generateClass(int classes) {
 
@@ -69,25 +61,10 @@ public class KlasHandler {
             }
         }
     }
-    
+
+
     /**
-     * -------------------------------------------------------------------------------
-     * Give student a class
-     * @param studArr
-     * @param klasArr 
-     */
-    public void studentInKlas(ArrayList<Student> studArr, 
-            ArrayList<Klas> klasArr) {
-        
-        for (int i = 0; i < klasArr.size(); i++) {
-            studArr.get(i).setKlas(klasArr.get(i));
-            
-        }
-        
-    }
-// -----------------------------------------------------------------------------------
-    /**
-     * 
+     *
      */
     public enum course {
 
@@ -111,5 +88,15 @@ public class KlasHandler {
          *
          */
         T
+    }
+
+    @Override
+    public String toString() {
+        return allClasses + " ";
+    }
+
+    public void getAllClassesString() {
+        System.out.println(allClasses.toString());
+
     }
 }

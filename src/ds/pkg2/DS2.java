@@ -26,35 +26,32 @@ public class DS2 {
         //  Create students
         studentHandler.createStudents(10);
         //  Retrieve array with students
-        //  At this point we only got an array with studentnumbers
+        //  At this point we only got an array with studentnumbers and grades
         ArrayList<Student> allStudents = studentHandler.getStudents();
 
-
-        // 
+        // Calculating the amount of classrooms to be created.
         klasHandler.calculateClass(allStudents);
 
 
         klasHandler.getAllClassesString();
-        studentHandler.getAllStudents();
+        studentHandler.getAllStudentsString();
+        
 
-
-
-        System.out.println(klasHandler.getAllClassesString());
         
         // allStudents ArrayList omzetten naar array
         Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
         
         Selection.sort(allStudentsArray);
         
-        for( int i = 0; i < allStudentsArray.length; i++){
-            System.out.println( allStudentsArray[i].toString() );
+        for (Student allStudentsArray1 : allStudentsArray) {
+            System.out.println(allStudentsArray1.toString());
         }
         
         // shuffle students array
         StdRandom.shuffle(allStudentsArray);
-        System.out.println("Geshuffled vanaf hier");
-        for( int i = 0; i < allStudentsArray.length; i++){
-            System.out.println( allStudentsArray[i].toString() );
+        System.out.println("SHUFFLE");
+        for (Student allStudentsArray1 : allStudentsArray) {
+            System.out.println(allStudentsArray1.toString());
         }
         
     }

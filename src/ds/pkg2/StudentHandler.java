@@ -19,21 +19,10 @@ public class StudentHandler {
 
     /**
      *
-     * @return
+     * @return ArrayList of Students
      */
-    public ArrayList getStudents() {
+    public ArrayList<Student> getStudents() {
         return allStudents;
-    }
-
-    @Override
-    public String toString() {
-        return allStudents + " ";
-    }
-
-    public void getAllStudents() {
-
-        System.out.println(allStudents.toString());
-
     }
 
     // Generates a studentnumber for the given index
@@ -55,6 +44,17 @@ public class StudentHandler {
             Student student = new Student(generateStudentNumber(i));
             allStudents.add(student);
         }
+    }
+
+    @Override
+    public String toString() {
+        return allStudents + " ";
+    }
+
+    public void getAllStudentsString() {
+
+        System.out.println(allStudents.toString());
+
     }
 
 }
