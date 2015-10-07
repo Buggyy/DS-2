@@ -6,13 +6,14 @@
 package ds.pkg2;
 
 import java.text.DecimalFormat;
+import java.util.Comparator;
 import java.util.Random;
 
 /**
  *
  * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
-public class Student implements Comparable {
+public class Student implements Comparator<Student> {
 
     // Attributes
     private int studentNummer;
@@ -26,9 +27,9 @@ public class Student implements Comparable {
     }
 
     /**
-     * Generates a random double within the range 1.0 - 10.0 
-     * 
-     * @return 
+     * Generates a random double within the range 1.0 - 10.0
+     *
+     * @return
      */
     public static double generateCijfer() {
         DecimalFormat df = new DecimalFormat("#.#");
@@ -69,8 +70,8 @@ public class Student implements Comparable {
 
     /**
      * Returns a String representation of a Student object
-     * 
-     * @return 
+     *
+     * @return
      */
     @Override
     public String toString() {
@@ -85,24 +86,55 @@ public class Student implements Comparable {
 
     /**
      * Compares the cijfer attribute of two Student objects with each other
-     * 
-     * @param that
+     *
      * @return
      */
-    public int compareTo(Student that) {
-        if (this.cijfer > that.cijfer) {
-            return +1;
-        }
-        if (this.cijfer < that.cijfer) {
+    @Override
+    public int compare(Student o1, Student o2) {
+        if (o1.cijfer > o2.getCijfer()) {
             return -1;
+        }
+        if (o1.cijfer < o2.getCijfer()) {
+            return +1;
         } else {
             return 0;
         }
     }
 
-    @Override
-    public int compareTo(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    static Comparator<Student> CijferComparator() {
+        return new Comparator<Student>() {
+
+            @Override
+            public int compare(Student s1, Student s2) {
+                if (s1.getCijfer() > s2.getCijfer()) {
+                    return -1;
+                }
+                if (s1.getCijfer() < s2.getCijfer()) {
+                    return +1;
+                } else {
+                    return 0;
+                }
+            }
+
+        };
+    }
+
+    static Comparator<Student> StudentNummerComparator() {
+        return new Comparator<Student>() {
+
+            @Override
+            public int compare(Student s1, Student s2) {
+                if ( s1.getStudentNummer() > s2.getStudentNummer() ) {
+                    return -1;
+                }
+                if ( s1.getStudentNummer() < s2.getStudentNummer() ) {
+                    return +1;
+                } else {
+                    return 0;
+                }
+            }
+
+        };
     }
 
 }

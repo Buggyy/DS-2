@@ -10,6 +10,7 @@ import ds.pkg2.Handler.MainHandler;
 import ds.pkg2.Handler.StudentHandler;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
@@ -67,7 +68,7 @@ public class DS2 {
         Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
 
         // Sort all the students based on "cijfer" from low to high
-        Selection.sort(allStudentsArray);
+//        Selection.sort(allStudentsArray);
 
         // Print all the contents of the allStudents array
         for (Student allStudentsArray1 : allStudentsArray) {
@@ -77,19 +78,22 @@ public class DS2 {
         // Shuffle students array
         StdRandom.shuffle(allStudentsArray);
 
+        Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());
+
+        // Print all the contents of the allStudents array
         System.out.println("**SHUFFLE\n");
         for (Student allStudentsArray1 : allStudentsArray) {
             System.out.println(allStudentsArray1.toString());
-
         }
 
-        // Bucket sort
-        int maxVal = 5;
-        Student[] data = {};
 
-        System.out.println("Before: " + Arrays.toString(data));
-        BucketSort.sort(data, maxVal);
-        System.out.println("After:  " + Arrays.toString(data));
+        // Bucket sort
+//        int maxVal = 5;
+//        Student[] data = {};
+//
+//        System.out.println("Before: " + Arrays.toString(data));
+//        BucketSort.sort(data, maxVal);
+//        System.out.println("After:  " + Arrays.toString(data));
 
     }
 }
