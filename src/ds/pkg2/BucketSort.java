@@ -16,107 +16,28 @@
 //          If the range of numbers is to large, the bucket array can't be
 //          allocated and the method will fail.
 
-import java.lang.*;
-import java.io.*;
+import ds.pkg2.Student;
 import java.util.*;
 
-class BucketSort
-  {
-  /**
-    *  Calling BucketSort constructor on array of floats sorts the array.
-    *  Parameter N is the number of elements to be sorted.
-   **/
+public class BucketSort {
 
-  BucketSort(int array[], int N)
-    {
-    if( N <= 0 )
-      return;                                   // Case of empty array
+    public static void sort(Student[] a, int maxVal) {
+        Student[] bucket = new Student[maxVal + 1];
 
-    int min = array[0];
-    int max = min;
-    for( int i = 1; i < N; i++ )                // Find the minimum and maximum
-      if( array[i] > max )
-        max = array[i];
-      else if( array[i] < min )
-        min = array[i];
-
-    int bucket[] = new int[max-min+1];          // Create buckets
-    
-    for( int i = 0; i < N; i++ )                // "Fill" buckets
-      bucket[array[i]-min]++;                   // by counting each datum
-
-    int i = 0;                                  
-    for( int b = 0; b < bucket.length; b++ )    // "Empty" buckets
-      for( int j = 0; j < bucket[b]; j++ )      // back into array
-        array[i++] = b+min;                     // by creating one per count
-    }
-
-
-  /**
-    *  test program for bucketsort; reads arbitrarily-many numbers 
-    *  from standard input, sorts them, then writes them to standard output.
-   **/
-
-  public static void main(String[] args)
-    {
-    StreamTokenizer in = new StreamTokenizer(System.in);
-
-    int Size = 1;                       // initial allocation
-    int N = 0;                          // number of elements in array
-    int array[] = new int[Size];        // initial array allocation
-
-    try
-      {
-      // while more numbers in file
-      while( in.nextToken() != java.io.StreamTokenizer.TT_EOF ) 
-        {
-        if( N == Size )                 // if the array is full
-          {
-          array = reallocate(array);    // int the array size
-          Size *= 2;    
-          }
-        array[N++] = (int)in.nval;      // put item in array
+        for (int i = 0; i < bucket.length; i++) {
+            bucket[i] = ;
         }
-      }
-    catch(IOException e)
-      {
-      System.err.println("*** IOException caught");
-      }
 
-    Date startTime = new Date();
+        for (int i = 0; i < a.length; i++) {
+            bucket[a[i]]++;
+        }
 
-    System.err.println("Sorting started");
-
-    new BucketSort(array, N);		// calling constructor sorts
-
-    Date endTime = new Date();
-
-    long time = endTime.getTime() - startTime.getTime();
-
-    System.err.println("Sorting finished in " + time + " ms");
-
-    for( int i = 0; i < N; i++ )
-      {
-      System.out.print(array[i] + " ");
-      }    
-
-    System.out.println();
-
-    System.err.println("Sorting " + N + " elements using bucketsort took " + 
-                        time + " ms");
+        int outPos = 0;
+        for (int i = 0; i < bucket.length; i++) {
+            for (int j = 0; j < bucket[i]; j++) {
+                a[outPos++] = i;
+            }
+        }
     }
 
-
-  /**
-    *  reallocate allocates a new array int the size of the original
-    *  and copies the original into it.  The new array is returned.
-   **/
-
-  static int[] reallocate(int array[])
-    {
-    int[] newArray = new int[2*array.length];
-    for( int i = 0; i < array.length; i++ )             // copy old array
-      newArray[i] = array[i];    
-    return newArray;
-    }
-  }
+}
