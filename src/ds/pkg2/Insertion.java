@@ -1,17 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ds.pkg2;
 
-import static java.lang.System.nanoTime;
-import static java.lang.System.out;
-import java.util.logging.Logger;
 import nl.hva.dmci.ict.inf.ads.lib.In;
-import static nl.hva.dmci.ict.inf.ads.lib.In.readStrings;
 import nl.hva.dmci.ict.inf.ads.lib.StdOut;
-import static nl.hva.dmci.ict.inf.ads.lib.StdOut.print;
-import static nl.hva.dmci.ict.inf.ads.lib.StdOut.println;
 
 /**
  *
- * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
+ * @author Omer
  */
 public class Insertion {
 
@@ -28,19 +27,21 @@ public class Insertion {
         }
     }
 
-    /**
-     *
-     * @param studenten
-     */
     public static void sortCijfer(Student[] studenten) {
 
-        double beginTime = nanoTime();
+        double beginTime = System.nanoTime();
         
         for (int i = 1; i < studenten.length; i++) {
  
+            // Pak de huidige student
             Student temp = studenten[i];
+            
+            // Kopieer i naar j om terug te kunnen loopen
             int j = i;
  
+            // Looped terwijl het eerste cijfer kleiner is dan het tweede cijfer
+            // en wisselt de twee waardes met elkaar om, zodat de kleinere 
+            // waarde lager in de array komt
             while (j > 0 && studenten[j - 1].getCijfer() < temp.getCijfer()) {
  
                 studenten[j] = studenten[j - 1];
@@ -52,17 +53,14 @@ public class Insertion {
  
         }
 
-        double endTime = nanoTime();
+        double endTime = System.nanoTime();
         
+        System.out.println("\nCijfer sortering - benodigd tijd: " + (endTime - beginTime) / 1000000000 + " sec") ;
     }
     
-    /**
-     *
-     * @param studenten
-     */
     public static void sortStudentNumber(Student[] studenten) {
 
-        double beginTime = nanoTime();
+        double beginTime = System.nanoTime();
         
         for (int i = 1; i < studenten.length; i++) {
  
@@ -80,8 +78,9 @@ public class Insertion {
  
         }
         
-        double endTime = nanoTime();
+        double endTime = System.nanoTime();
 
+        System.out.println("\nStudentnummer sortering - benodigd tijd: " + (endTime - beginTime) / 1000000000 + " sec");
         
     }
     
@@ -91,7 +90,7 @@ public class Insertion {
      */
     public static void sortKlassenAlphabetic(Klas[] klassen) {
 
-        double beginTime = nanoTime();
+        double beginTime = System.nanoTime();
         
         for (int i = 1; i < klassen.length; i++) {
  
@@ -109,8 +108,9 @@ public class Insertion {
  
         }
         
-        double endTime = nanoTime();
+        double endTime = System.nanoTime();
 
+        System.out.println("\nKlas sortering - benodigd tijd: " + (endTime - beginTime) / 1000000000 + " sec");
         
     }
 
@@ -125,10 +125,10 @@ public class Insertion {
     }
 
     private static void show(Comparable[] a) {  // Print the array, on a single line.
-        for (Comparable a1 : a) {
-            print(a1 + " ");
+        for (int i = 0; i < a.length; i++) {
+            StdOut.print(a[i] + " ");
         }
-        println();
+        StdOut.println();
     }
 
     /**
@@ -144,17 +144,5 @@ public class Insertion {
         }
         return true;
     }
-
-    /**
-     *
-     * @param args
-     */
-    public static void main(String[] args) {  // Read strings from standard input, sort them, and print.
-        String[] a = readStrings();
-        sort(a);
-        assert isSorted(a);
-        show(a);
-    }
-    private static final Logger LOG = Logger.getLogger(Insertion.class.getName());
 
 }
