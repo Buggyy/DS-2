@@ -7,6 +7,7 @@ package ds.pkg2.Comparator;
 
 import ds.pkg2.Student;
 import java.util.Comparator;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,5 +26,6 @@ public class CijferComparator implements Comparator<Student> {
             return 0;
         }
     }
+    private static final Logger LOG = Logger.getLogger(CijferComparator.class.getName());
     
 }

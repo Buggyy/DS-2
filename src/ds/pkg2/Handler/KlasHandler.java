@@ -5,23 +5,21 @@
  */
 package ds.pkg2.Handler;
 
+import static ds.pkg2.Handler.KlasHandler.course.values;
 import ds.pkg2.Klas;
 import ds.pkg2.Student;
 import static java.lang.Math.ceil;
+import static java.lang.System.out;
 import java.util.ArrayList;
 
-/**
- *
- * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
- *
- */
+
 public class KlasHandler {
 
     private static final int MAX_STUDENTS = 32;
 
     private int amountOfClassesInt;
 
-    private ArrayList<Klas> allClasses = new ArrayList<>();
+    private final ArrayList<Klas> allClasses = new ArrayList<>();
 
     public ArrayList<Klas> getAllClasses() {
         return allClasses;
@@ -36,7 +34,7 @@ public class KlasHandler {
         //  10.000
         int amountOfStudents = arr.size();
         //  5
-        int amountOfCourses = course.values().length;
+        int amountOfCourses = values().length;
         //  2000
         double studentsPerCourse = amountOfStudents / amountOfCourses;
 
@@ -59,40 +57,12 @@ public class KlasHandler {
     public void generateClass(int classes) {
 
         for (int i = 0; i < classes; i++) {
-            for (course value : course.values()) {
+            for (course value : values()) {
                 allClasses.add(new Klas(value.toString(), i));
             }
         }
     }
 
-    /**
-     * Course
-     */
-    public enum course {
-
-        /**
-         * Business IT and Management
-         */
-        B,
-        /**
-         * Game Development
-         */
-        G,
-        /**
-         * System and Network Engineering
-         */
-        N,
-        /**
-         * Software Engineering
-         */
-        S,
-        /**
-         * Technische Informatica
-         */
-        T
-
-        //  To add a course, just add an enum
-    }
 
     @Override
     public String toString() {
@@ -103,7 +73,30 @@ public class KlasHandler {
      * Returns all classes as a String
      */
     public void getAllClassesString() {
-        System.out.println(allClasses.toString());
+    }
 
+    /**
+     * Course
+     */
+    public enum course {
+
+        /**
+         * Business IT and Management
+         */
+        B, /**
+         * Game Development
+         */
+        G, /**
+         * System and Network Engineering
+         */
+        N, /**
+         * Software Engineering
+         */
+        S, /**
+         * Technische Informatica
+         */
+        T
+
+        //  To add a course, just add an enum
     }
 }

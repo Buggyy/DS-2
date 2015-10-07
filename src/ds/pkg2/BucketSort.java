@@ -1,6 +1,13 @@
 package ds.pkg2;
 
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author Rafael
+ */
 public class BucketSort {
+    private static final Logger LOG = Logger.getLogger(BucketSort.class.getName());
 
 //    public static void sort(Student[] a, int maxVal) {
 //        Student[] bucket = new Student[maxVal + 1];

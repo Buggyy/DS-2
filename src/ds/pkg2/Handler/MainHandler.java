@@ -3,6 +3,7 @@ package ds.pkg2.Handler;
 import ds.pkg2.Klas;
 import ds.pkg2.Student;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,22 +21,22 @@ public class MainHandler {
      */
     public ArrayList<Klas> studentInKlas(ArrayList<Student> studArr,
             ArrayList<Klas> klasArr) {
+        
         int counter = 0;
 
-        for (int i = 0; i < studArr.size(); i++) {
+        for (Student studArr1 : studArr) {
             if (counter < klasArr.size()) {
-                studArr.get(i).setKlas(klasArr.get(counter));
-                klasArr.get(counter).addStudent(studArr.get(i));
-
+                studArr1.setKlas(klasArr.get(counter));
+                klasArr.get(counter).addStudent(studArr1);
                 counter++;
                 if (counter == klasArr.size()) {
                     counter = 0;
                 }
             }
-
         }
 
         return klasArr;
     }
+    private static final Logger LOG = Logger.getLogger(MainHandler.class.getName());
 
 }

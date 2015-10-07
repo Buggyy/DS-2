@@ -6,7 +6,9 @@
 package ds.pkg2.Handler;
 
 import ds.pkg2.Student;
+import static java.lang.System.out;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,9 +16,9 @@ import java.util.ArrayList;
  */
 public class StudentHandler {
 
-    private ArrayList<Student> allStudents = new ArrayList<>();
+    private final ArrayList<Student> allStudents = new ArrayList<>();
 
-    private final int BASE_NUMBER = 50060001;
+    private final int BASE_NUMBER = 50_060_001;
 
     /**
      *
@@ -51,10 +53,11 @@ public class StudentHandler {
         return allStudents + " ";
     }
 
+    /**
+     *
+     */
     public void getAllStudentsString() {
-
-        System.out.println(allStudents.toString());
-
     }
+    private static final Logger LOG = Logger.getLogger(StudentHandler.class.getName());
 
 }

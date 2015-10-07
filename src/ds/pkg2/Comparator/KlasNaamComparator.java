@@ -7,6 +7,7 @@ package ds.pkg2.Comparator;
 
 import ds.pkg2.Klas;
 import java.util.Comparator;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,5 +22,6 @@ public class KlasNaamComparator implements Comparator<Klas>{
         
         return klasNaam1.compareTo(klasNaam2);
     }
+    private static final Logger LOG = Logger.getLogger(KlasNaamComparator.class.getName());
     
 }

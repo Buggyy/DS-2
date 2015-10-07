@@ -8,7 +8,6 @@ package ds.pkg2;
 import ds.pkg2.Handler.KlasHandler;
 import ds.pkg2.Handler.MainHandler;
 import ds.pkg2.Handler.StudentHandler;
-// import static ds.pkg2.Student.StudentNummerComparator;
 import java.util.ArrayList;
 import java.util.Scanner;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;

@@ -5,15 +5,26 @@
  */
 package ds.pkg2;
 
+import static java.lang.Double.valueOf;
 import java.text.DecimalFormat;
-import java.util.Comparator;
 import java.util.Random;
 
-/**
- *
- * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
- */
+
 public class Student /*implements Comparator<Student>*/ {
+
+    /**
+     * Generates a random double within the range 1.0 - 10.0
+     *
+     * @return
+     */
+    public static double generateCijfer() {
+        DecimalFormat df = new DecimalFormat("#.#");
+        double rangeMin = 1.0;
+        double rangeMax = 10.0;
+        Random r = new Random();
+        double randomValue = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
+        return randomValue = valueOf(df.format(randomValue));
+    }
 
     // Attributes
     private int studentNummer;
@@ -24,24 +35,6 @@ public class Student /*implements Comparator<Student>*/ {
         this.studentNummer = studentNummer;
         this.klas = klas;
         this.cijfer = generateCijfer();
-    }
-
-    /**
-     * Generates a random double within the range 1.0 - 10.0
-     *
-     * @return
-     */
-    public static double generateCijfer() {
-        DecimalFormat df = new DecimalFormat("#.#");
-
-        double rangeMin = 1.0;
-        double rangeMax = 10.0;
-
-        Random r = new Random();
-        double randomValue = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
-
-        return randomValue = Double.valueOf(df.format(randomValue));
-
     }
 
     public int getStudentNummer() {
@@ -83,7 +76,6 @@ public class Student /*implements Comparator<Student>*/ {
 
         return sb.toString();
     }
-
 //    /**
 //     * Compares the cijfer attribute of two Student objects with each other
 //     *
@@ -136,5 +128,6 @@ public class Student /*implements Comparator<Student>*/ {
 //
 //        };
 //    }
+    
 
 }
