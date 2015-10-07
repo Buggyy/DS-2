@@ -10,6 +10,7 @@ import ds.pkg2.Handler.KlasHandler;
 import ds.pkg2.Handler.StudentHandler;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
@@ -34,39 +35,40 @@ public class DS2 {
         ArrayList<Student> allStudents = studentHandler.getStudents();
 
         // Calculating the amount of classrooms to be created per course
-        klasHandler.calculateClass(allStudents);   
-         
+        klasHandler.calculateClass(allStudents);
+
         //  ArrayList of all classroomss
         ArrayList<Klas> allClasses = klasHandler.getAllClasses();
-                
+
         //  ArrayList of classrooms filled with students
         ArrayList<Klas> filled = mainHandler.studentInKlas(allStudents, allClasses);
-        
+
         System.out.println(filled.toString());
-        
+
 //        klasHandler.getAllClassesString();
 //        studentHandler.getAllStudentsString();
-
-        
         // Convert allStudents ArrayList to an array to enable sorting
         Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-        
+
         // Sort all the students based on "cijfer" from low to high
         Selection.sort(allStudentsArray);
-        
+
         // Print all the contents of the allStudents array
         for (Student allStudentsArray1 : allStudentsArray) {
             System.out.println(allStudentsArray1.toString());
         }
-        
+
         // Shuffle students array
         StdRandom.shuffle(allStudentsArray);
 
+        Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());
+
+        // Print all the contents of the allStudents array
         System.out.println("**SHUFFLE\n");
         for (Student allStudentsArray1 : allStudentsArray) {
             System.out.println(allStudentsArray1.toString());
-
         }
+
         
       // Bucket sort
       int maxVal=5;
@@ -76,5 +78,16 @@ public class DS2 {
       BucketSort.sort(data, maxVal);
       System.out.println("After:  " + Arrays.toString(data));
         
+
+//        
+//        // Bucket sort
+//        int maxVal=5;
+//      Student [] data= {}; 
+// 
+//      System.out.println("Before: " + Arrays.toString(data));
+//      BucketSort.sort(data, maxVal);
+//      System.out.println("After:  " + Arrays.toString(data));
+
+
     }
 }
