@@ -1,13 +1,15 @@
 package ds.pkg2;
 
 import static java.lang.String.format;
+import java.util.Comparator;
 import java.util.LinkedList;
 
 /**
  *
  * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
-public class Klas implements Comparable<Klas> {
+public class Klas /*implements Comparator<Klas> */ {
+
 
     // Attributes
     private LinkedList students = new LinkedList();
@@ -50,10 +52,28 @@ public class Klas implements Comparable<Klas> {
     public void addStudent(Student student) {
         this.students.add(student);
     }
-
-    @Override
-    public int compareTo(Klas naam) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
+//    @Override
+//    public int compare(Klas o1, Klas o2) {
+//        ;
+//    }
+//    
+//    static Comparator<Klas> KlasNameComparator() {
+//        return new Comparator<Klas>() {
+//
+//            @Override
+//            public int compare(Klas k1, Klas k2) {
+//                if ( k1.getNaam().compareTo( k2.getNaam() ) == -1) {
+//                    return -1;
+//                }
+//                if ( k1.getNaam().compareTo( k2.getNaam() ) == 1 ) {
+//                    return +1;
+//                } else {
+//                    return 0;
+//                }
+//            }
+//
+//        };
+//    }
+    
 }

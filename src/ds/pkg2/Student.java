@@ -13,7 +13,7 @@ import java.util.Random;
  *
  * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
-public class Student implements Comparator<Student> {
+public class Student /*implements Comparator<Student>*/ {
 
     // Attributes
     private int studentNummer;
@@ -84,57 +84,57 @@ public class Student implements Comparator<Student> {
         return sb.toString();
     }
 
-    /**
-     * Compares the cijfer attribute of two Student objects with each other
-     *
-     * @return
-     */
-    @Override
-    public int compare(Student o1, Student o2) {
-        if (o1.cijfer > o2.getCijfer()) {
-            return -1;
-        }
-        if (o1.cijfer < o2.getCijfer()) {
-            return +1;
-        } else {
-            return 0;
-        }
-    }
-
-    static Comparator<Student> CijferComparator() {
-        return new Comparator<Student>() {
-
-            @Override
-            public int compare(Student s1, Student s2) {
-                if (s1.getCijfer() > s2.getCijfer()) {
-                    return -1;
-                }
-                if (s1.getCijfer() < s2.getCijfer()) {
-                    return +1;
-                } else {
-                    return 0;
-                }
-            }
-
-        };
-    }
-
-    static Comparator<Student> StudentNummerComparator() {
-        return new Comparator<Student>() {
-
-            @Override
-            public int compare(Student s1, Student s2) {
-                if ( s1.getStudentNummer() > s2.getStudentNummer() ) {
-                    return -1;
-                }
-                if ( s1.getStudentNummer() < s2.getStudentNummer() ) {
-                    return +1;
-                } else {
-                    return 0;
-                }
-            }
-
-        };
-    }
+//    /**
+//     * Compares the cijfer attribute of two Student objects with each other
+//     *
+//     * @return
+//     */
+//    @Override
+//    public int compare(Student o1, Student o2) {
+//        if (o1.cijfer > o2.getCijfer()) {
+//            return -1;
+//        }
+//        if (o1.cijfer < o2.getCijfer()) {
+//            return +1;
+//        } else {
+//            return 0;
+//        }
+//    }
+//
+//    static Comparator<Student> CijferComparator() {
+//        return new Comparator<Student>() {
+//
+//            @Override
+//            public int compare(Student s1, Student s2) {
+//                if (s1.getCijfer() > s2.getCijfer()) {
+//                    return -1;
+//                }
+//                if (s1.getCijfer() < s2.getCijfer()) {
+//                    return +1;
+//                } else {
+//                    return 0;
+//                }
+//            }
+//
+//        };
+//    }
+//
+//    static Comparator<Student> StudentNummerComparator() {
+//        return new Comparator<Student>() {
+//
+//            @Override
+//            public int compare(Student s1, Student s2) {
+//                if ( s1.getStudentNummer() < s2.getStudentNummer() ) {
+//                    return -1;
+//                }
+//                if ( s1.getStudentNummer() > s2.getStudentNummer() ) {
+//                    return +1;
+//                } else {
+//                    return 0;
+//                }
+//            }
+//
+//        };
+//    }
 
 }
