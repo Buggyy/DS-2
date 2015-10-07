@@ -5,6 +5,9 @@
  */
 package ds.pkg2;
 
+import ds.pkg2.Handler.MainHandler;
+import ds.pkg2.Handler.KlasHandler;
+import ds.pkg2.Handler.StudentHandler;
 import java.util.ArrayList;
 import java.util.Arrays;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
@@ -26,16 +29,12 @@ public class DS2 {
         MainHandler mainHandler = new MainHandler();
 
         //  Create students
-        studentHandler.createStudents(13);
-        //  Retrieve array with students
-        //  At this point we only got an array with studentnumbers and grades
+        studentHandler.createStudents(10000);
+        //  Array with studentnumbers and grades
         ArrayList<Student> allStudents = studentHandler.getStudents();
-        
-        
 
         // Calculating the amount of classrooms to be created per course
-        klasHandler.calculateClass(allStudents);
-       
+        klasHandler.calculateClass(allStudents);   
          
         //  ArrayList of all classroomss
         ArrayList<Klas> allClasses = klasHandler.getAllClasses();
@@ -69,8 +68,8 @@ public class DS2 {
 
         }
         
-        // Bucket sort
-        int maxVal=5;
+      // Bucket sort
+      int maxVal=5;
       Student [] data= {}; 
  
       System.out.println("Before: " + Arrays.toString(data));

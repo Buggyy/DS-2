@@ -6,21 +6,18 @@
 package ds.pkg2;
 
 import static java.lang.String.format;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
-public class Klas {
+public class Klas implements Comparable<Klas>{
 
     // Attributes
     private LinkedList students = new LinkedList();
 
     private String naam;
-
     private String richting;
     private int nummer;
 
@@ -34,6 +31,10 @@ public class Klas {
         this.students = students;
     }
 
+    public String getNaam() {
+        return naam;
+    }
+
     /**
      * Adds a Student to the Klas
      * @param student
@@ -42,81 +43,35 @@ public class Klas {
         this.students.add(student);
     }
 
-    public ArrayList<Student> getStudents() {
-        return students;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getRichting() {
-        return richting;
-    }
-
-    /**
-     *
-     * @param richting
-     */
-    public void setRichting(String richting) {
-        this.richting = richting;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public int getNummer() {
-        return nummer;
-    }
-
-    /**
-     *
-     * @param nummer
-     */
-    public void setNummer(int nummer) {
-        this.nummer = nummer;
-    }
-
-    public ArrayList<Student> getKlas() {
-        return this.students;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getNaam() {
-        return this.naam;
-    }
 
     
-        @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
+//    @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//
+//        sb.append(this.naam).append("\n").toString();
+//        for (Student student : students) {
+//            sb.append(student.toString()).append("\n");
+//        }
+//
+//        return sb.toString();
+//
+//    }
 
-        sb.append(this.naam).append("\n").toString();
-        for (Student student : students) {
-            sb.append(student.toString()).append("\n");
-        }
-        
-        return sb.toString();
+//    public int compareName(Klas that){
+//        if (this.getNaam() > that.getNaam() ) {
+//            return -1;
+//        }
+//        if (this.cijfer < that.cijfer) {
+//            return +1;
+//        } else {
+//            return 0;
+//        }
+//    }
 
-    }
-
-    public int compareName(Klas that){
-        if (this.getNaam() > that.getNaam() ) {
-            return -1;
-        }
-        if (this.cijfer < that.cijfer) {
-            return +1;
-        } else {
-            return 0;
-        }
+    @Override
+    public int compareTo(Klas naam) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public 
-
-    private static final Logger LOG = Logger.getLogger(Klas.class.getName());
-
 }

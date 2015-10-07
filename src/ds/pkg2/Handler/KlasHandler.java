@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ds.pkg2;
+package ds.pkg2.Handler;
 
+import ds.pkg2.Klas;
+import ds.pkg2.Student;
 import static java.lang.Math.round;
 import java.util.ArrayList;
 
@@ -64,30 +66,32 @@ public class KlasHandler {
 
 
     /**
-     *
+     *  Course
      */
     public enum course {
 
         /**
-         *
+         *  Business IT and Management
          */
         B,
         /**
-         *
+         *  Game Development
          */
         G,
         /**
-         *
+         *  System and Network Engineering
          */
         N,
         /**
-         *
+         *  Software Engineering
          */
         S,
         /**
-         *
+         * Technische Informatica
          */
         T
+        
+        //  To add a course, just add an enum
     }
 
     @Override

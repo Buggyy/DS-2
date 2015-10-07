@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ds.pkg2;
+package ds.pkg2.Comparator;
 
+import ds.pkg2.Student;
 import java.util.Comparator;
 
 /**
  *
- * @author Omer
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
 public class CijferComparator implements Comparator<Student> {
 
