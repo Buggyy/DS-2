@@ -6,6 +6,8 @@
 package ds.pkg2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
  *
@@ -49,10 +51,20 @@ public class DS2 {
         
         // shuffle students array
         StdRandom.shuffle(allStudentsArray);
+
         System.out.println("SHUFFLE");
         for (Student allStudentsArray1 : allStudentsArray) {
             System.out.println(allStudentsArray1.toString());
+
         }
+        
+        // Bucket sort
+        int maxVal=5;
+      Student [] data= {}; 
+ 
+      System.out.println("Before: " + Arrays.toString(data));
+      BucketSort.sort(data, maxVal);
+      System.out.println("After:  " + Arrays.toString(data));
         
     }
 }
