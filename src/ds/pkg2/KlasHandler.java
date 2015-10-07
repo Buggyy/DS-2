@@ -95,6 +95,9 @@ public class KlasHandler {
         return allClasses + " ";
     }
 
+    /**
+     * Returns all classes as a String
+     */
     public void getAllClassesString() {
         System.out.println(allClasses.toString());
 

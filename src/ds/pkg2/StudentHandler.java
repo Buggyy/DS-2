@@ -24,10 +24,9 @@ public class StudentHandler {
     public ArrayList<Student> getStudents() {
         return allStudents;
     }
-
-    // Generates a studentnumber for the given index
+    
     /**
-     *
+     * Generates a student number with the given number
      * @param number
      * @return
      */

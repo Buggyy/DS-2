@@ -30,6 +30,11 @@ public class Student implements Comparable {
         this.cijfer = generateCijfer();
     }
 
+    /**
+     * Generates a random double within the range 1.0 - 10.0 
+     * 
+     * @return 
+     */
     public static double generateCijfer() {
         DecimalFormat df = new DecimalFormat("#.#");
 
@@ -67,6 +72,11 @@ public class Student implements Comparable {
         this.cijfer = cijfer;
     }
 
+    /**
+     * Returns a String representation of a Student object
+     * 
+     * @return 
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,6 +88,12 @@ public class Student implements Comparable {
         return sb.toString();
     }
 
+    /**
+     * Compares the cijfer attribute of two Student objects with each other
+     * 
+     * @param that
+     * @return
+     */
     public int compareTo(Student that) {
         if (this.cijfer > that.cijfer) {
             return +1;
