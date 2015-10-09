@@ -30,81 +30,31 @@ public class DS2 {
         KlasHandler klasHandler = new KlasHandler();
         StudentHandler studentHandler = new StudentHandler();
         MainHandler mainHandler = new MainHandler();
-        
 
         System.out.print("How many students to create?: ");
 
         //TO-DO Check on legal input + exit option
         int amountOfStudents = input.nextInt();
 
-        //  Create students
-        studentHandler.createStudents(amountOfStudents);
-
-
-//        try {
-//            System.out.print("How many students to create?: ");
-//
-//        } catch (InputMismatchException exception) {
-//            System.out.println("This is not an integer");
-//
-//        }
-
         System.out.println(amountOfStudents);
 
         //  Create students
         studentHandler.createStudents(amountOfStudents);
         
-
         //  Array with studentnumbers and grades
         ArrayList<Student> allStudents = studentHandler.getStudents();
 
         // Calculating the amount of classrooms to be created per course
         klasHandler.calculateClass(allStudents);
 
-//        //  ArrayList of all classroomss
-//        ArrayList<Klas> allClasses = klasHandler.getAllClasses();
-//
-//        //  ArrayList of classrooms filled with students
-//        ArrayList<Klas> filled = mainHandler.studentInKlas(allStudents, allClasses);
-        
-//        // Convert allStudents ArrayList to an array to enable sorting
-//        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-//
-//        // Sort all the students based on "cijfer" from low to high
-////        Selection.sort(allStudentsArray);
-//        // Print all the contents of the allStudents array
-//        for (Student allStudentsArray1 : allStudentsArray) {
-//            System.out.println(allStudentsArray1.toString());
-//        }
-//
-//        // Shuffle students array
-//        StdRandom.shuffle(allStudentsArray);
-//
-//        Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());
-//
-//        // Print all the contents of the allStudents array
-//        System.out.println(filled.toString());
+        //  ArrayList of all classrooms
+        ArrayList<Klas> allClasses = klasHandler.getAllClasses();
 
-//        klasHandler.getAllClassesString();
-//        studentHandler.getAllStudentsString();
+        //  ArrayList of classrooms filled with students
+        ArrayList<Klas> filled = mainHandler.studentInKlas(allStudents, allClasses);
+        
         // Convert allStudents ArrayList to an array to enable sorting
         Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-
-        // Sort all the students based on "cijfer" from low to high
-        // Insertion.sortNew( allStudentsArray, StudentNummerComparator());
-
-        // Print all the contents of the allStudents array
-//        for (Student allStudentsArray1 : allStudentsArray) {
-//            System.out.println(allStudentsArray1.toString());
-//        }
-
-        // Print all the contents of the allStudents array
-
-//        System.out.println("**SHUFFLE\n");
-//        for (Student allStudentsArray1 : allStudentsArray) {
-//            System.out.println(allStudentsArray1.toString());
-//        }
-
         
         // Shuffle students array
         StdRandom.shuffle(allStudentsArray);
@@ -122,17 +72,9 @@ public class DS2 {
         Insertion.sortCijfer(allStudentsArray);
         
         System.out.println("********SORTED ON CIJFER********");
-        for (Student allStudentsArray1 : allStudentsArray) {
-            System.out.println(allStudentsArray1.toString());
+        for (Student s : allStudentsArray) {
+            System.out.println(s.toString());
         }
         
-        
-        // Bucket sort
-//        int maxVal = 5;
-//        Student[] data = {};
-//
-//        System.out.println("Before: " + Arrays.toString(data));
-//        BucketSort.sort(data, maxVal);
-//        System.out.println("After:  " + Arrays.toString(data));
     }
 }
