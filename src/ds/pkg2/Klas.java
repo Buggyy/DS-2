@@ -15,7 +15,7 @@ public class Klas /*implements Comparator<Klas> */ {
     /**
      *
      * @param richting Course
-     * @param nummer 
+     * @param nummer number of course
      */
     public Klas(String richting, int nummer) {
         this.naam = "I" + richting + "2" + format("%04d", nummer + 1);

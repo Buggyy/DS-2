@@ -11,6 +11,8 @@ import java.util.logging.Logger;
  */
 public class MainHandler {
 
+    private final ArrayList<Klas> filled = new ArrayList<>();
+
     /**
      *
      * Fill Klas object with students
@@ -21,22 +23,34 @@ public class MainHandler {
      */
     public ArrayList<Klas> studentInKlas(ArrayList<Student> studArr,
             ArrayList<Klas> klasArr) {
-        
+
         int counter = 0;
 
-        for (Student studArr1 : studArr) {
+        for (Student studArrObject : studArr) {
             if (counter < klasArr.size()) {
-                studArr1.setKlas(klasArr.get(counter));
-                klasArr.get(counter).addStudent(studArr1);
+                studArrObject.setKlas(klasArr.get(counter));
+                klasArr.get(counter).addStudent(studArrObject);
+
                 counter++;
+
                 if (counter == klasArr.size()) {
                     counter = 0;
                 }
             }
         }
 
+        for (int i = 0; i < klasArr.size(); i++) {
+            filled.add(klasArr.get(counter));
+
+        }
+
         return klasArr;
     }
+
+    public ArrayList<Klas> getFilled() {
+        return filled;
+    }
+
     private static final Logger LOG = Logger.getLogger(MainHandler.class.getName());
 
 }

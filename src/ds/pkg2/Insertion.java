@@ -5,7 +5,6 @@
  */
 package ds.pkg2;
 
-import nl.hva.dmci.ict.inf.ads.lib.In;
 import nl.hva.dmci.ict.inf.ads.lib.StdOut;
 
 /**
@@ -14,6 +13,10 @@ import nl.hva.dmci.ict.inf.ads.lib.StdOut;
  */
 public class Insertion {
 
+//    private final Stopwatch stopwatch = new Stopwatch();
+//    private double timeStart;
+//    private double timeEnd;
+//    private double lapTime;
     /**
      *
      * @param a
@@ -30,60 +33,62 @@ public class Insertion {
     public static void sortCijfer(Student[] studenten) {
 
         double beginTime = System.nanoTime();
-        
+
         for (int i = 1; i < studenten.length; i++) {
- 
+
             // Pak de huidige student
             Student temp = studenten[i];
-            
+
             // Kopieer i naar j om terug te kunnen loopen
             int j = i;
- 
+
             // Looped terwijl het eerste cijfer kleiner is dan het tweede cijfer
             // en wisselt de twee waardes met elkaar om, zodat de kleinere 
             // waarde lager in de array komt
             while (j > 0 && studenten[j - 1].getCijfer() < temp.getCijfer()) {
- 
+
                 studenten[j] = studenten[j - 1];
- 
+
                 j--;
             }
- 
+
             studenten[j] = temp;
- 
+
         }
 
         double endTime = System.nanoTime();
-        
-        System.out.println("\nCijfer sortering - benodigd tijd: " + (endTime - beginTime) / 1000000000 + " sec") ;
+
+        System.out.println("\nCijfer sortering - benodigd tijd: " + (endTime - beginTime) / 1000000000 + " sec");
     }
-    
+
     public static void sortStudentNumber(Student[] studenten) {
 
+        // timeStart = stopwatch.elapsedTime();
         double beginTime = System.nanoTime();
-        
+
         for (int i = 1; i < studenten.length; i++) {
- 
+
             Student temp = studenten[i];
             int j = i;
- 
+
             while (j > 0 && studenten[j - 1].getStudentNummer() > temp.getStudentNummer()) {
- 
+
                 studenten[j] = studenten[j - 1];
- 
+
                 j--;
             }
- 
+
             studenten[j] = temp;
- 
+
         }
-        
+        //timeEnd = stopwatch.elapsedTime();
+        //lapTime = timeEnd - timeStart;
         double endTime = System.nanoTime();
 
         System.out.println("\nStudentnummer sortering - benodigd tijd: " + (endTime - beginTime) / 1000000000 + " sec");
-        
+
     }
-    
+
     /**
      *
      * @param klassen
@@ -91,27 +96,27 @@ public class Insertion {
     public static void sortKlassenAlphabetic(Klas[] klassen) {
 
         double beginTime = System.nanoTime();
-        
+
         for (int i = 1; i < klassen.length; i++) {
- 
+
             Klas temp = klassen[i];
             int j = i;
- 
-            while (j > 0 && ( klassen[j - 1].getNaam().compareTo( temp.getNaam() ) == 1 ) ){
- 
+
+            while (j > 0 && (klassen[j - 1].getNaam().compareTo(temp.getNaam()) == 1)) {
+
                 klassen[j] = klassen[j - 1];
- 
+
                 j--;
             }
- 
+
             klassen[j] = temp;
- 
+
         }
-        
+
         double endTime = System.nanoTime();
 
         System.out.println("\nKlas sortering - benodigd tijd: " + (endTime - beginTime) / 1000000000 + " sec");
-        
+
     }
 
     private static boolean less(Comparable v, Comparable w) {

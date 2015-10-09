@@ -33,14 +33,11 @@ public class DS2 {
 
         System.out.print("How many students to create?: ");
 
-        //TO-DO Check on legal input + exit option
         int amountOfStudents = input.nextInt();
-
-        System.out.println(amountOfStudents);
 
         //  Create students
         studentHandler.createStudents(amountOfStudents);
-        
+
         //  Array with studentnumbers and grades
         ArrayList<Student> allStudents = studentHandler.getStudents();
 
@@ -50,8 +47,15 @@ public class DS2 {
         //  ArrayList of all classrooms
         ArrayList<Klas> allClasses = klasHandler.getAllClasses();
 
+//        System.out.println(allClasses.toString());
+//        System.out.println(allStudents.toString());
+        
         //  ArrayList of classrooms filled with students
-        ArrayList<Klas> filled = mainHandler.studentInKlas(allStudents, allClasses);
+        mainHandler.studentInKlas(allStudents, allClasses);
+        ArrayList<Klas> filled = mainHandler.getFilled();
+        
+        System.out.println(filled.get(1).toString());
+
         
         // Convert allStudents ArrayList to an array to enable sorting
         Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
@@ -71,10 +75,9 @@ public class DS2 {
         // Collections.sort(Arrays.asList(allStudentsArray), Student.CijferComparator());
         Insertion.sortCijfer(allStudentsArray);
         
-        System.out.println("********SORTED ON CIJFER********");
+        System.out.println("----------------SORTED ON CIJFER----------------");
         for (Student s : allStudentsArray) {
             System.out.println(s.toString());
         }
-        
     }
 }
