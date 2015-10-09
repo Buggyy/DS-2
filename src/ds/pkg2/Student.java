@@ -10,7 +10,42 @@ import java.text.DecimalFormat;
 import java.util.Random;
 
 public class Student /*implements Comparator<Student>*/ {
+    
+    // Attributes
+    private int studentNummer = 0;
+//    private Klas klas = new Klas(null, studentNummer);
+    private double cijfer = 0;
 
+    public Student(int studentNummer) {
+        this.studentNummer = studentNummer;
+        // this.klas = klas;
+        this.cijfer = generateCijfer();
+    }
+
+    public int getStudentNummer() {
+        return studentNummer;
+    }
+
+    public void setStudentNummer(int studentNummer) {
+        this.studentNummer = studentNummer;
+    }
+
+//    public Klas getKlas() {
+//        return klas;
+//    }
+//
+//    public void setKlas(Klas klas) {
+//        this.klas = klas;
+//    }
+
+    public double getCijfer() {
+        return cijfer;
+    }
+
+    public void setCijfer(double cijfer) {
+        this.cijfer = cijfer;
+    }
+    
     /**
      * Generates a random double within the range 1.0 - 10.0
      *
@@ -28,41 +63,6 @@ public class Student /*implements Comparator<Student>*/ {
         return randomValue = valueOf(df.format(randomValue));
     }
 
-    // Attributes
-    private int studentNummer;
-    private Klas klas;
-    private double cijfer;
-
-    public Student(int studentNummer) {
-        this.studentNummer = studentNummer;
-        this.klas = klas;
-        this.cijfer = generateCijfer();
-    }
-
-    public int getStudentNummer() {
-        return studentNummer;
-    }
-
-    public void setStudentNummer(int studentNummer) {
-        this.studentNummer = studentNummer;
-    }
-
-    public Klas getKlas() {
-        return klas;
-    }
-
-    public void setKlas(Klas klas) {
-        this.klas = klas;
-    }
-
-    public double getCijfer() {
-        return cijfer;
-    }
-
-    public void setCijfer(double cijfer) {
-        this.cijfer = cijfer;
-    }
-
     /**
      * Returns a String representation of a Student object
      *
@@ -72,9 +72,9 @@ public class Student /*implements Comparator<Student>*/ {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Studentnummer: ").append(this.studentNummer).append("\n");
-        sb.append("Klas: ").append(this.klas).append("\n");
-        sb.append("Cijfer: ").append(this.cijfer).append("\n");
+        sb.append("\nStudentnummer: " + this.studentNummer);
+        // sb.append("\nKlas: " + this.klas);
+        sb.append("\nCijfer: " + this.cijfer);
 
         return sb.toString();
     }
