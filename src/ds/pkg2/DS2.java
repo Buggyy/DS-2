@@ -10,7 +10,6 @@ import ds.pkg2.Handler.MainHandler;
 import ds.pkg2.Handler.StudentHandler;
 import java.util.ArrayList;
 import java.util.Scanner;
-import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
  *
@@ -49,35 +48,35 @@ public class DS2 {
 
 //        System.out.println(allClasses.toString());
 //        System.out.println(allStudents.toString());
-        
-        //  ArrayList of classrooms filled with students
+//        
+//        //  ArrayList of classrooms filled with students
         mainHandler.studentInKlas(allStudents, allClasses);
         ArrayList<Klas> filled = mainHandler.getFilled();
         
-        System.out.println(filled.get(1).toString());
-
-        
-        // Convert allStudents ArrayList to an array to enable sorting
-        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-        
-        // Shuffle students array
+        System.out.println(filled.toString());
+//
+//        
+//        // Convert allStudents ArrayList to an array to enable sorting
+//        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
+//        
+//        // Shuffle students array
         StdRandom.shuffle(allStudentsArray);
-
-        //      Sort on studentnummer
-        // Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());
-        Insertion.sortStudentNumber(allStudentsArray);
-        
-        System.out.println("----------------SORTED ON STUDENTNUMBER---------------");
-        for (Student allStudentsArray1 : allStudentsArray) {
-            System.out.println(allStudentsArray1.toString());
-        }
-        
-        // Collections.sort(Arrays.asList(allStudentsArray), Student.CijferComparator());
-        Insertion.sortCijfer(allStudentsArray);
-        
-        System.out.println("----------------SORTED ON CIJFER----------------");
-        for (Student s : allStudentsArray) {
-            System.out.println(s.toString());
-        }
+//
+//        //      Sort on studentnummer
+//        // Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());
+//        Insertion.sortStudentNumber(allStudentsArray);
+//        
+//        System.out.println("----------------SORTED ON STUDENTNUMBER---------------");
+//        for (Student allStudentsArray1 : allStudentsArray) {
+//            System.out.println(allStudentsArray1.toString());
+//        }
+//        
+//        // Collections.sort(Arrays.asList(allStudentsArray), Student.CijferComparator());
+//        Insertion.sortCijfer(allStudentsArray);
+//        
+//        System.out.println("----------------SORTED ON CIJFER----------------");
+//        for (Student s : allStudentsArray) {
+//            System.out.println(s.toString());
+//        }
     }
 }

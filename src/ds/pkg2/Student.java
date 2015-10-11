@@ -73,7 +73,7 @@ public class Student /*implements Comparator<Student>*/ {
         StringBuilder sb = new StringBuilder();
 
         sb.append("Studentnummer: ").append(this.studentNummer).append("\n");
-        sb.append("Klas: ").append(this.klas).append("\n");
+//        sb.append("Klas: ").append(this.klas).append("\n");
         sb.append("Cijfer: ").append(this.cijfer).append("\n");
 
         return sb.toString();

@@ -36,15 +36,15 @@ public class Insertion {
 
         for (int i = 1; i < studenten.length; i++) {
 
-            // Pak de huidige student
+            // Get current student
             Student temp = studenten[i];
 
-            // Kopieer i naar j om terug te kunnen loopen
+            // Copying i to j to loop back
             int j = i;
 
-            // Looped terwijl het eerste cijfer kleiner is dan het tweede cijfer
-            // en wisselt de twee waardes met elkaar om, zodat de kleinere 
-            // waarde lager in de array komt
+            //  Looping while the first grade is smaller than the second grade
+            //  and switching the two values with each other so that the smaller
+            //  grade is lower in the array
             while (j > 0 && studenten[j - 1].getCijfer() < temp.getCijfer()) {
 
                 studenten[j] = studenten[j - 1];
@@ -63,7 +63,6 @@ public class Insertion {
 
     public static void sortStudentNumber(Student[] studenten) {
 
-        // timeStart = stopwatch.elapsedTime();
         double beginTime = System.nanoTime();
 
         for (int i = 1; i < studenten.length; i++) {
@@ -81,8 +80,6 @@ public class Insertion {
             studenten[j] = temp;
 
         }
-        //timeEnd = stopwatch.elapsedTime();
-        //lapTime = timeEnd - timeStart;
         double endTime = System.nanoTime();
 
         System.out.println("\nStudentnummer sortering - benodigd tijd: " + (endTime - beginTime) / 1000000000 + " sec");

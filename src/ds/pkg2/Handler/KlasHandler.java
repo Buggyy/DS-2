@@ -9,7 +9,6 @@ import static ds.pkg2.Handler.KlasHandler.course.values;
 import ds.pkg2.Klas;
 import ds.pkg2.Student;
 import static java.lang.Math.ceil;
-import static java.lang.System.out;
 import java.util.ArrayList;
 
 
@@ -96,7 +95,5 @@ public class KlasHandler {
          * Technische Informatica
          */
         T
-
-        //  To add a course, just add an enum
     }
 }
