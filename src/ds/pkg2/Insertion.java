@@ -9,7 +9,7 @@ import nl.hva.dmci.ict.inf.ads.lib.StdOut;
 
 /**
  *
- * @author Omer
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
 public class Insertion {
 

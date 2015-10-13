@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Stefan Lobato [IS204] 500707274
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
 public class MainHandler {
 
@@ -21,14 +21,16 @@ public class MainHandler {
      * @param klasArr
      * @return
      */
-    public ArrayList<Klas> studentInKlas(ArrayList<Student> studArr,
+    public Klas[] studentInKlas(Student[] studArr,
             ArrayList<Klas> klasArr) {
 
         int counter = 0;
 
+        // loops through all students
         for (Student studArrObject : studArr) {
+            
             if (counter < klasArr.size()) {
-                studArrObject.setKlas(klasArr.get(counter));
+                // studArrObject.setKlas(klasArr.get(counter));
                 klasArr.get(counter).addStudent(studArrObject);
 
                 counter++;
@@ -37,14 +39,16 @@ public class MainHandler {
                     counter = 0;
                 }
             }
+            
         }
 
+        // Add all the values from klassArr to filled
         for (int i = 0; i < klasArr.size(); i++) {
-            filled.add(klasArr.get(counter));
+            filled.add(klasArr.get(i));
 
         }
 
-        return klasArr;
+        return (Klas[]) filled.toArray();
     }
 
     public ArrayList<Klas> getFilled() {

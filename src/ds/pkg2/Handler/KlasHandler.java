@@ -11,7 +11,10 @@ import ds.pkg2.Student;
 import static java.lang.Math.ceil;
 import java.util.ArrayList;
 
-
+/**
+ *
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
+ */
 public class KlasHandler {
 
     private static final int MAX_STUDENTS = 32;

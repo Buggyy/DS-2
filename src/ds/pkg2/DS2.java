@@ -10,6 +10,7 @@ import ds.pkg2.Handler.MainHandler;
 import ds.pkg2.Handler.StudentHandler;
 import java.util.ArrayList;
 import java.util.Scanner;
+import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
  *
@@ -37,35 +38,56 @@ public class DS2 {
         //  Create students
         studentHandler.createStudents(amountOfStudents);
 
-        //  Array with studentnumbers and grades
+        // Get array with studentnumbers and grades
         ArrayList<Student> allStudents = studentHandler.getStudents();
 
-        // Calculating the amount of classrooms to be created per course
+        // Calculate and create the amount of classes to be created per course
         klasHandler.calculateClass(allStudents);
 
-        //  ArrayList of all classrooms
+        //  Get ArrayList with all generated and empty classes
         ArrayList<Klas> allClasses = klasHandler.getAllClasses();
 
 //        System.out.println(allClasses.toString());
 //        System.out.println(allStudents.toString());
-//        
-//        //  ArrayList of classrooms filled with students
-        mainHandler.studentInKlas(allStudents, allClasses);
-        ArrayList<Klas> filled = mainHandler.getFilled();
         
-        System.out.println(filled.toString());
-//
-//        
-//        // Convert allStudents ArrayList to an array to enable sorting
-//        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-//        
-//        // Shuffle students array
+        // Convert allStudents ArrayList to an array to enable sorting
+        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
+
+        // Shuffle students array
         StdRandom.shuffle(allStudentsArray);
-//
-//        //      Sort on studentnummer
+
+        // Fill classes with students and 
+        // get ArrayList of classrooms filled with students
+        Klas[] filled = mainHandler.studentInKlas(allStudentsArray, allClasses);;
+        
+        // Shuffle all the classes and return as an array
+        Klas[] shuffledClasses = filled;
+        StdRandom.shuffle( shuffledClasses );
+        
+//        // Sort all Students in all classes based on studentnumber
 //        // Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());
-//        Insertion.sortStudentNumber(allStudentsArray);
-//        
+//        // Loop through all classes
+//        for (Klas k : filled) {
+//
+//            // Loop through all students per class
+//            for (Student s : (Student[]) k.getStudents().toArray()) {
+//                
+//            }
+//
+//        }
+
+        // Sort all classes 
+        Insertion.sortKlassenAlphabetic(shuffledClasses);
+        
+        // Print all classes
+        for (Klas k : filled) {
+            System.out.println(k.toString());
+        }
+
+        //      Sort on studentnummer
+        // Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());
+        Insertion.sortStudentNumber(allStudentsArray);
+
 //        System.out.println("----------------SORTED ON STUDENTNUMBER---------------");
 //        for (Student allStudentsArray1 : allStudentsArray) {
 //            System.out.println(allStudentsArray1.toString());
