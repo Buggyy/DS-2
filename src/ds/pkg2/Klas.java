@@ -1,6 +1,7 @@
 package ds.pkg2;
 
 import static java.lang.String.format;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -9,7 +10,7 @@ import java.util.NoSuchElementException;
  *
  * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
-public class Klas<Item> implements Iterable<Item> {
+public class Klas<Item> {
 
 
     // Attributes
@@ -74,11 +75,6 @@ public class Klas<Item> implements Iterable<Item> {
 
     }
     
-//    @Override
-//    public int compare(Klas o1, Klas o2) {
-//        ;
-//    }
-//    
 //    static Comparator<Klas> KlasNameComparator() {
 //        return new Comparator<Klas>() {
 //
@@ -96,48 +92,6 @@ public class Klas<Item> implements Iterable<Item> {
 //
 //        };
 //    }
-    
-    private class Node{
-        Item item;
-        Node next;
-        
-    }
-    
-    /**
-     * Makes the Deque iterable
-     *
-     * @return
-     */
-    @Override
-    public Iterator<Item> iterator() {
-        return new ListIterator();
-    }
 
-    private class ListIterator implements Iterator<Item> {
-
-        private Node current = first;
-
-        @Override
-        public boolean hasNext() {
-            return current != null;
-        }
-
-        @Override
-        public void remove() {
-        }
-
-        @Override
-        public Item next() {
-            Item item = current.item;
-            current = current.next;
-            return item;
-        }
-    }
-
-    private void throwIfEmpty() {
-        if (first == null) {
-            throw new NoSuchElementException();
-        }
-    }
     
 }

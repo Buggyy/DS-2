@@ -9,6 +9,7 @@ import ds.pkg2.Handler.KlasHandler;
 import ds.pkg2.Handler.MainHandler;
 import ds.pkg2.Handler.StudentHandler;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
@@ -58,7 +59,7 @@ public class DS2 {
 
         // Fill classes with students and 
         // get ArrayList of classrooms filled with students
-        Klas[] filled = mainHandler.studentInKlas(allStudentsArray, allClasses);;
+        Klas[] filled = mainHandler.studentInKlas(allStudentsArray, allClasses);
         
         // Shuffle all the classes and return as an array
         Klas[] shuffledClasses = filled;
@@ -76,17 +77,19 @@ public class DS2 {
 //
 //        }
 
-        // Sort all classes 
-        Insertion.sortKlassenAlphabetic(shuffledClasses);
+        // Sort all classes alphabetically
+        // Insertion.sortKlassenAlphabetic(shuffledClasses);
+        Arrays.sort(shuffledClasses, new KlasNameComparator());
+        
         
         // Print all classes
         for (Klas k : filled) {
             System.out.println(k.toString());
         }
-
+        
         //      Sort on studentnummer
         // Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());
-        Insertion.sortStudentNumber(allStudentsArray);
+        // Insertion.sortStudentNumber(allStudentsArray);
 
 //        System.out.println("----------------SORTED ON STUDENTNUMBER---------------");
 //        for (Student allStudentsArray1 : allStudentsArray) {

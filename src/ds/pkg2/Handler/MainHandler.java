@@ -47,8 +47,14 @@ public class MainHandler {
             filled.add(klasArr.get(i));
 
         }
+        
+        // Convert ArrayList 
+        Klas[] filledArray = new Klas[filled.size()];
+        for(int i = 0; i < filled.size(); i++){
+            filledArray[i] = filled.get(i);
+        }
 
-        return (Klas[]) filled.toArray();
+        return filledArray;
     }
 
     public ArrayList<Klas> getFilled() {
