@@ -14,6 +14,7 @@ import java.util.Comparator;
 public class KlasNameComparator implements Comparator<Klas> {
             @Override
             public int compare(Klas k1, Klas k2) {
+                
                 if ( k1.getNaam().compareTo( k2.getNaam() ) < 0) {
                     return -1;
                 }

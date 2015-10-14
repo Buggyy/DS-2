@@ -23,12 +23,12 @@ public class MainHandler {
      */
     public Klas[] studentInKlas(Student[] studArr,
             ArrayList<Klas> klasArr) {
-
+        
         int counter = 0;
 
         // loops through all students
         for (Student studArrObject : studArr) {
-            
+
             if (counter < klasArr.size()) {
                 // studArrObject.setKlas(klasArr.get(counter));
                 klasArr.get(counter).addStudent(studArrObject);
@@ -39,7 +39,7 @@ public class MainHandler {
                     counter = 0;
                 }
             }
-            
+
         }
 
         // Add all the values from klassArr to filled
@@ -47,10 +47,10 @@ public class MainHandler {
             filled.add(klasArr.get(i));
 
         }
-        
+
         // Convert ArrayList 
         Klas[] filledArray = new Klas[filled.size()];
-        for(int i = 0; i < filled.size(); i++){
+        for (int i = 0; i < filled.size(); i++) {
             filledArray[i] = filled.get(i);
         }
 

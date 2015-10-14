@@ -79,13 +79,14 @@ public class DS2 {
 
         // Sort all classes alphabetically
         // Insertion.sortKlassenAlphabetic(shuffledClasses);
+
         Arrays.sort(shuffledClasses, new KlasNameComparator());
         
-        
+ 
         // Print all classes
-        for (Klas k : filled) {
-            System.out.println(k.toString());
-        }
+//        for (Klas k : filled) {
+//            System.out.println(k.toString());
+//        }
         
         //      Sort on studentnummer
         // Collections.sort(Arrays.asList(allStudentsArray), Student.StudentNummerComparator());

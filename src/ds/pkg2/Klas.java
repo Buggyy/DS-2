@@ -1,10 +1,7 @@
 package ds.pkg2;
 
 import static java.lang.String.format;
-import java.util.Comparator;
-import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
 
 /**
  *
@@ -58,7 +55,7 @@ public class Klas<Item> {
      * @param s 
      */
     public void addStudent(Student s) {
-
+        
         if (students.size() == 0) {
             students.add(s);
         } else if (students.get(0).getStudentNummer() > s.getStudentNummer()) {

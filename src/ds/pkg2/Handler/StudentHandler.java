@@ -36,15 +36,18 @@ public class StudentHandler {
         return BASE_NUMBER + number;
     }
 
+    
     /**
      *
      * @param amount
      */
     public void createStudents(int amount) {
+        
         for (int i = 0; i < amount; i++) {
             Student student = new Student(generateStudentNumber(i));
             allStudents.add(student);
         }
+       
     }
 
     @Override
