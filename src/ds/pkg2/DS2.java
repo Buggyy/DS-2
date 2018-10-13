@@ -15,7 +15,8 @@ import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
  *
- * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
+ * @author Ömer Zülaloğlu [IS204] 500712124
+ * Rafael Lobato [IS204] 500707274
  */
 public class DS2 {
 
